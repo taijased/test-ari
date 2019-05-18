@@ -23,6 +23,7 @@
 		8AF7ABC6228EE58E000F1D7E /* MainInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AF7ABBF228EE58E000F1D7E /* MainInteractor.swift */; };
 		8AF7ABC9228EE5B8000F1D7E /* MainViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8AF7ABC8228EE5B8000F1D7E /* MainViewController.storyboard */; };
 		8AF7ABD1228EF1FD000F1D7E /* BottomControls.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AF7ABD0228EF1FD000F1D7E /* BottomControls.swift */; };
+		8AF7ABD9228F15AC000F1D7E /* UIButton + Custom.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AF7ABD8228F15AC000F1D7E /* UIButton + Custom.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -44,6 +45,7 @@
 		8AF7ABBF228EE58E000F1D7E /* MainInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainInteractor.swift; sourceTree = "<group>"; };
 		8AF7ABC8228EE5B8000F1D7E /* MainViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MainViewController.storyboard; sourceTree = "<group>"; };
 		8AF7ABD0228EF1FD000F1D7E /* BottomControls.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomControls.swift; sourceTree = "<group>"; };
+		8AF7ABD8228F15AC000F1D7E /* UIButton + Custom.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton + Custom.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -94,6 +96,7 @@
 				8AF7ABA1228ECD9E000F1D7E /* WebImageView.swift */,
 				8AF7ABAC228ED932000F1D7E /* Constraints.swift */,
 				8AF7ABAE228EDC9E000F1D7E /* UIColor + Hex.swift */,
+				8AF7ABD8228F15AC000F1D7E /* UIButton + Custom.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -200,6 +203,7 @@
 				8AF7ABC2228EE58E000F1D7E /* MainWorker.swift in Sources */,
 				8AF7ABAD228ED932000F1D7E /* Constraints.swift in Sources */,
 				8AF7ABA0228ECD80000F1D7E /* UIViewController + Storyboard.swift in Sources */,
+				8AF7ABD9228F15AC000F1D7E /* UIButton + Custom.swift in Sources */,
 				8AF7AB7E228ECC26000F1D7E /* AppDelegate.swift in Sources */,
 				8AF7ABC1228EE58E000F1D7E /* MainPresenter.swift in Sources */,
 				8AF7ABAF228EDC9E000F1D7E /* UIColor + Hex.swift in Sources */,

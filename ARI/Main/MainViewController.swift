@@ -55,6 +55,8 @@ class MainViewController: UIViewController, MainDisplayLogic {
                               trailing: view.trailingAnchor,
                               padding: UIEdgeInsets(top: 777, left: 777, bottom: 15, right: 8),
                               size: CGSize(width: 170, height: 50))
+        
+        bottomControls.delegate = self
     }
     
     
@@ -65,4 +67,19 @@ class MainViewController: UIViewController, MainDisplayLogic {
         
     }
     
+}
+
+
+// MARK: BottomControlsDelegate
+
+extension MainViewController: BottomControlsDelegate {
+    func bottomControlActions(buttonName: String) {
+        switch buttonName {
+        case "settings": print(buttonName)
+        case "search": print(buttonName)
+        case "plus": print(buttonName)
+        default: break
+        }
+    }
+
 }
