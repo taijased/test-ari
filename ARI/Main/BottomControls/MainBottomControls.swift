@@ -13,7 +13,7 @@ protocol BottomControlsDelegate: class {
     func bottomControlActions(buttonName: String)
 }
 
-class BottomControls: UIView {
+class MainBottomControls: UIView {
     
     weak var delegate: BottomControlsDelegate?
     
@@ -42,9 +42,6 @@ class BottomControls: UIView {
         super.init(frame: frame)
         translatesAutoresizingMaskIntoConstraints = false
         backgroundColor = .clear
-        
-        
-        
         setupUI()
     }
     

@@ -18,5 +18,4 @@ class MainPresenter: MainPresentationLogic {
   func presentData(response: Main.Model.Response.ResponseType) {
   
   }
-  
 }

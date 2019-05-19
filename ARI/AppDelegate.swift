@@ -7,17 +7,35 @@
 //
 
 import UIKit
+import VK_ios_sdk
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
+    var vkAuthService: AuthService!
 
+    static func shared() -> AppDelegate {
+        return UIApplication.shared.delegate as! AppDelegate
+    }
+    
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
         
-        window = UIWindow()
+         window = UIWindow()
+        
+        
+        // MARK: Sign In VK
+        
+        self.vkAuthService = AuthService()
+        vkAuthService.delegate = self
+        
+        
+        
+       
         let mainVC: MainViewController = MainViewController.loadFromStoryboard()
+        
+        
+//        let authVC: AuthViewController = AuthViewController.loadFromStoryboard()
         let navigationVC = UINavigationController(rootViewController: mainVC)
         window?.rootViewController = navigationVC
         window?.makeKeyAndVisible()
@@ -26,3 +44,33 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
 }
 
+
+
+// MARK: VKAuthServiceDelegate
+
+
+extension AppDelegate: AuthServiceDelegate {
+    
+    
+    func application(_ app: UIApplication, open url: URL, options: [UIApplication.OpenURLOptionsKey : Any] = [:]) -> Bool {
+        VKSdk.processOpen(url, fromApplication: UIApplication.OpenURLOptionsKey.sourceApplication.rawValue)
+        return true
+    }
+    
+    // MARK: AuthServiceDelegate
+    func authServiceShouldShow(_ viewController: UIViewController) {
+        print(#function)
+        window?.rootViewController?.present(viewController, animated: true, completion: nil)
+    }
+    
+    func authServiceSignIn() {
+        print(#function)
+        let mainVC: MainViewController = MainViewController.loadFromStoryboard()
+        let navigationVC = UINavigationController(rootViewController: mainVC)
+        window?.rootViewController = navigationVC
+    }
+    
+    func authServiceDidSignInFail() {
+        print(#function)
+    }
+}

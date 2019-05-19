@@ -16,7 +16,7 @@ class MainViewController: UIViewController, MainDisplayLogic {
     
     var interactor: MainBusinessLogic?
     var router: (NSObjectProtocol & MainRoutingLogic)?
-    private var bottomControls = BottomControls()
+    private var bottomControls = MainBottomControls()
     
     
     // MARK: Setup
