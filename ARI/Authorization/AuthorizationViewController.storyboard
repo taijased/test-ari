@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="U6Z-X3-YY9">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Authorization View Controller-->
+        <scene sceneID="L45-5e-DJL">
+            <objects>
+                <viewController id="U6Z-X3-YY9" customClass="AuthorizationViewController" customModule="ARI" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Q8V-Pf-tUe">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AvT-E8-4fh">
+                                <rect key="frame" x="136" y="318.5" width="103" height="30"/>
+                                <state key="normal" title="Sign in with VK"/>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="AvT-E8-4fh" firstAttribute="centerY" secondItem="Q8V-Pf-tUe" secondAttribute="centerY" id="4fv-AQ-27v"/>
+                            <constraint firstItem="AvT-E8-4fh" firstAttribute="centerX" secondItem="Q8V-Pf-tUe" secondAttribute="centerX" id="Yep-CU-JTT"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="hO7-24-keA"/>
+                    </view>
+                    <connections>
+                        <outlet property="buttonSignInVK" destination="AvT-E8-4fh" id="1es-Rx-8ZN"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="bZC-Eq-Vre" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="125" y="50"/>
+        </scene>
+    </scenes>
+</document>

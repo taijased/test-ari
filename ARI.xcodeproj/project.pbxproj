@@ -7,19 +7,20 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		8AC08B4022915E660093F570 /* AuthPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AC08B3922915E660093F570 /* AuthPresenter.swift */; };
-		8AC08B4122915E660093F570 /* AuthWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AC08B3A22915E660093F570 /* AuthWorker.swift */; };
-		8AC08B4222915E660093F570 /* AuthRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AC08B3B22915E660093F570 /* AuthRouter.swift */; };
-		8AC08B4322915E660093F570 /* AuthModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AC08B3C22915E660093F570 /* AuthModels.swift */; };
-		8AC08B4422915E660093F570 /* AuthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AC08B3D22915E660093F570 /* AuthViewController.swift */; };
-		8AC08B4522915E660093F570 /* AuthInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AC08B3E22915E660093F570 /* AuthInteractor.swift */; };
 		8AC08B48229164160093F570 /* credentials.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8AC08B47229164160093F570 /* credentials.plist */; };
-		8AC08B4F229168540093F570 /* AuthViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8AC08B4E229168540093F570 /* AuthViewController.storyboard */; };
 		8AC08B552291704E0093F570 /* VK_ios_sdk.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8AC08B542291704E0093F570 /* VK_ios_sdk.framework */; };
 		8AC08B57229172F30093F570 /* NetworkServce.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AC08B56229172F30093F570 /* NetworkServce.swift */; };
 		8AC08B59229173F30093F570 /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AC08B58229173F30093F570 /* API.swift */; };
 		8AC08B5B229178CD0093F570 /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AC08B5A229178CD0093F570 /* AuthService.swift */; };
 		8AC08B5E22917B0D0093F570 /* UserResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AC08B5D22917B0D0093F570 /* UserResponse.swift */; };
+		8AC08B682291848C0093F570 /* AuthorizationPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AC08B612291848C0093F570 /* AuthorizationPresenter.swift */; };
+		8AC08B692291848C0093F570 /* AuthorizationWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AC08B622291848C0093F570 /* AuthorizationWorker.swift */; };
+		8AC08B6A2291848C0093F570 /* AuthorizationRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AC08B632291848C0093F570 /* AuthorizationRouter.swift */; };
+		8AC08B6B2291848C0093F570 /* AuthorizationModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AC08B642291848C0093F570 /* AuthorizationModels.swift */; };
+		8AC08B6C2291848C0093F570 /* AuthorizationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AC08B652291848C0093F570 /* AuthorizationViewController.swift */; };
+		8AC08B6D2291848C0093F570 /* AuthorizationInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AC08B662291848C0093F570 /* AuthorizationInteractor.swift */; };
+		8AC08B70229184B70093F570 /* AuthorizationViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8AC08B6F229184B70093F570 /* AuthorizationViewController.storyboard */; };
+		8AC08B72229187D60093F570 /* NetworkDataFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AC08B71229187D60093F570 /* NetworkDataFetcher.swift */; };
 		8AF7AB7E228ECC26000F1D7E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AF7AB7D228ECC26000F1D7E /* AppDelegate.swift */; };
 		8AF7AB85228ECC27000F1D7E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8AF7AB84228ECC27000F1D7E /* Assets.xcassets */; };
 		8AF7AB88228ECC27000F1D7E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8AF7AB86228ECC27000F1D7E /* LaunchScreen.storyboard */; };
@@ -43,19 +44,20 @@
 		17460A925DFBDA6D23E9B5C3 /* Pods-ARI.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ARI.debug.xcconfig"; path = "Target Support Files/Pods-ARI/Pods-ARI.debug.xcconfig"; sourceTree = "<group>"; };
 		585D7AE2CE8DD2D64EC2134B /* Pods_ARI.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ARI.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		836582DCBAF04FF08A1AB33A /* Pods-ARI.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ARI.release.xcconfig"; path = "Target Support Files/Pods-ARI/Pods-ARI.release.xcconfig"; sourceTree = "<group>"; };
-		8AC08B3922915E660093F570 /* AuthPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthPresenter.swift; sourceTree = "<group>"; };
-		8AC08B3A22915E660093F570 /* AuthWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthWorker.swift; sourceTree = "<group>"; };
-		8AC08B3B22915E660093F570 /* AuthRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthRouter.swift; sourceTree = "<group>"; };
-		8AC08B3C22915E660093F570 /* AuthModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthModels.swift; sourceTree = "<group>"; };
-		8AC08B3D22915E660093F570 /* AuthViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewController.swift; sourceTree = "<group>"; };
-		8AC08B3E22915E660093F570 /* AuthInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthInteractor.swift; sourceTree = "<group>"; };
 		8AC08B47229164160093F570 /* credentials.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = credentials.plist; sourceTree = "<group>"; };
-		8AC08B4E229168540093F570 /* AuthViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = AuthViewController.storyboard; sourceTree = "<group>"; };
 		8AC08B542291704E0093F570 /* VK_ios_sdk.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = VK_ios_sdk.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8AC08B56229172F30093F570 /* NetworkServce.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkServce.swift; sourceTree = "<group>"; };
 		8AC08B58229173F30093F570 /* API.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
 		8AC08B5A229178CD0093F570 /* AuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
 		8AC08B5D22917B0D0093F570 /* UserResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserResponse.swift; sourceTree = "<group>"; };
+		8AC08B612291848C0093F570 /* AuthorizationPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorizationPresenter.swift; sourceTree = "<group>"; };
+		8AC08B622291848C0093F570 /* AuthorizationWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorizationWorker.swift; sourceTree = "<group>"; };
+		8AC08B632291848C0093F570 /* AuthorizationRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorizationRouter.swift; sourceTree = "<group>"; };
+		8AC08B642291848C0093F570 /* AuthorizationModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorizationModels.swift; sourceTree = "<group>"; };
+		8AC08B652291848C0093F570 /* AuthorizationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorizationViewController.swift; sourceTree = "<group>"; };
+		8AC08B662291848C0093F570 /* AuthorizationInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorizationInteractor.swift; sourceTree = "<group>"; };
+		8AC08B6F229184B70093F570 /* AuthorizationViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = AuthorizationViewController.storyboard; sourceTree = "<group>"; };
+		8AC08B71229187D60093F570 /* NetworkDataFetcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkDataFetcher.swift; sourceTree = "<group>"; };
 		8AF7AB7A228ECC26000F1D7E /* ARI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ARI.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8AF7AB7D228ECC26000F1D7E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8AF7AB84228ECC27000F1D7E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -98,27 +100,28 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		8AC08B3822915E440093F570 /* Auth */ = {
+		8AC08B3822915E440093F570 /* Authorization */ = {
 			isa = PBXGroup;
 			children = (
-				8AC08B4E229168540093F570 /* AuthViewController.storyboard */,
-				8AC08B3D22915E660093F570 /* AuthViewController.swift */,
-				8AC08B3E22915E660093F570 /* AuthInteractor.swift */,
-				8AC08B3C22915E660093F570 /* AuthModels.swift */,
-				8AC08B3922915E660093F570 /* AuthPresenter.swift */,
-				8AC08B3A22915E660093F570 /* AuthWorker.swift */,
-				8AC08B3B22915E660093F570 /* AuthRouter.swift */,
+				8AC08B6F229184B70093F570 /* AuthorizationViewController.storyboard */,
+				8AC08B652291848C0093F570 /* AuthorizationViewController.swift */,
+				8AC08B662291848C0093F570 /* AuthorizationInteractor.swift */,
+				8AC08B642291848C0093F570 /* AuthorizationModels.swift */,
+				8AC08B612291848C0093F570 /* AuthorizationPresenter.swift */,
+				8AC08B622291848C0093F570 /* AuthorizationWorker.swift */,
+				8AC08B632291848C0093F570 /* AuthorizationRouter.swift */,
 			);
-			path = Auth;
+			path = Authorization;
 			sourceTree = "<group>";
 		};
 		8AC08B5022916B1F0093F570 /* Services */ = {
 			isa = PBXGroup;
 			children = (
 				8AC08B5C22917AFA0093F570 /* Models */,
+				8AC08B5A229178CD0093F570 /* AuthService.swift */,
 				8AC08B56229172F30093F570 /* NetworkServce.swift */,
 				8AC08B58229173F30093F570 /* API.swift */,
-				8AC08B5A229178CD0093F570 /* AuthService.swift */,
+				8AC08B71229187D60093F570 /* NetworkDataFetcher.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -153,7 +156,7 @@
 			isa = PBXGroup;
 			children = (
 				8AF7AB7D228ECC26000F1D7E /* AppDelegate.swift */,
-				8AC08B3822915E440093F570 /* Auth */,
+				8AC08B3822915E440093F570 /* Authorization */,
 				8AF7ABB9228EE578000F1D7E /* Main */,
 				8AC08B5022916B1F0093F570 /* Services */,
 				8AF7AB9E228ECD26000F1D7E /* Helpers */,
@@ -271,8 +274,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				8AF7AB88228ECC27000F1D7E /* LaunchScreen.storyboard in Resources */,
+				8AC08B70229184B70093F570 /* AuthorizationViewController.storyboard in Resources */,
 				8AC08B48229164160093F570 /* credentials.plist in Resources */,
-				8AC08B4F229168540093F570 /* AuthViewController.storyboard in Resources */,
 				8AF7ABC9228EE5B8000F1D7E /* MainViewController.storyboard in Resources */,
 				8AF7AB85228ECC27000F1D7E /* Assets.xcassets in Resources */,
 			);
@@ -358,26 +361,27 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8AC08B4322915E660093F570 /* AuthModels.swift in Sources */,
+				8AC08B72229187D60093F570 /* NetworkDataFetcher.swift in Sources */,
+				8AC08B6C2291848C0093F570 /* AuthorizationViewController.swift in Sources */,
+				8AC08B682291848C0093F570 /* AuthorizationPresenter.swift in Sources */,
+				8AC08B6B2291848C0093F570 /* AuthorizationModels.swift in Sources */,
 				8AC08B5E22917B0D0093F570 /* UserResponse.swift in Sources */,
 				8AF7ABC5228EE58E000F1D7E /* MainViewController.swift in Sources */,
 				8AF7ABA2228ECD9E000F1D7E /* WebImageView.swift in Sources */,
 				8AF7ABC4228EE58E000F1D7E /* MainModels.swift in Sources */,
 				8AF7ABD1228EF1FD000F1D7E /* MainBottomControls.swift in Sources */,
+				8AC08B692291848C0093F570 /* AuthorizationWorker.swift in Sources */,
+				8AC08B6D2291848C0093F570 /* AuthorizationInteractor.swift in Sources */,
 				8AF7ABC2228EE58E000F1D7E /* MainWorker.swift in Sources */,
 				8AC08B57229172F30093F570 /* NetworkServce.swift in Sources */,
-				8AC08B4222915E660093F570 /* AuthRouter.swift in Sources */,
 				8AF7ABAD228ED932000F1D7E /* Constraints.swift in Sources */,
-				8AC08B4122915E660093F570 /* AuthWorker.swift in Sources */,
 				8AF7ABA0228ECD80000F1D7E /* UIViewController + Storyboard.swift in Sources */,
 				8AF7ABD9228F15AC000F1D7E /* UIButton + Custom.swift in Sources */,
 				8AF7AB7E228ECC26000F1D7E /* AppDelegate.swift in Sources */,
 				8AC08B5B229178CD0093F570 /* AuthService.swift in Sources */,
-				8AC08B4022915E660093F570 /* AuthPresenter.swift in Sources */,
+				8AC08B6A2291848C0093F570 /* AuthorizationRouter.swift in Sources */,
 				8AF7ABC1228EE58E000F1D7E /* MainPresenter.swift in Sources */,
 				8AF7ABAF228EDC9E000F1D7E /* UIColor + Hex.swift in Sources */,
-				8AC08B4522915E660093F570 /* AuthInteractor.swift in Sources */,
-				8AC08B4422915E660093F570 /* AuthViewController.swift in Sources */,
 				8AF7ABC3228EE58E000F1D7E /* MainRouter.swift in Sources */,
 				8AC08B59229173F30093F570 /* API.swift in Sources */,
 				8AF7ABC6228EE58E000F1D7E /* MainInteractor.swift in Sources */,

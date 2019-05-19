@@ -1,5 +1,5 @@
 //
-//  AuthModels.swift
+//  AuthorizationModels.swift
 //  ARI
 //
 //  Created by Maxim Spiridonov on 19/05/2019.
@@ -8,17 +8,17 @@
 
 import UIKit
 
-enum Auth {
+enum Authorization {
    
   enum Model {
     struct Request {
       enum RequestType {
-        case authWithVK
+        case getUser(socialName: String)
       }
     }
     struct Response {
       enum ResponseType {
-        case some
+        case presentUserInfo(user: UserResponse?)
       }
     }
     struct ViewModel {

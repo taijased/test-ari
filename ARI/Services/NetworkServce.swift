@@ -17,13 +17,13 @@ final class NetworkService: Networking {
     
     
     
-    init(authService: AuthService = AppDelegate.shared().vkAuthService) {
+    init(authService: AuthService = AppDelegate.shared().authService) {
         self.authService = authService
     }
     
     func request(path: String, params: [String : String], completion: @escaping (Data?, Error?) -> Void) {
+    
         guard let token = authService.token else { return }
-        
         
         let params = ["filters": "post, photo"]
         var allParams = params

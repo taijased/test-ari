@@ -13,7 +13,7 @@ import VK_ios_sdk
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-    var vkAuthService: AuthService!
+    var authService: AuthService!
 
     static func shared() -> AppDelegate {
         return UIApplication.shared.delegate as! AppDelegate
@@ -26,17 +26,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         // MARK: Sign In VK
         
-        self.vkAuthService = AuthService()
-        vkAuthService.delegate = self
+        self.authService = AuthService()
+        authService.delegate = self
         
         
         
        
-        let mainVC: MainViewController = MainViewController.loadFromStoryboard()
+//        let mainVC: MainViewController = MainViewController.loadFromStoryboard()
         
         
-//        let authVC: AuthViewController = AuthViewController.loadFromStoryboard()
-        let navigationVC = UINavigationController(rootViewController: mainVC)
+        let authVC: AuthorizationViewController = AuthorizationViewController.loadFromStoryboard()
+        let navigationVC = UINavigationController(rootViewController: authVC)
         window?.rootViewController = navigationVC
         window?.makeKeyAndVisible()
         
