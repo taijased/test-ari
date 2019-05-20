@@ -25,11 +25,10 @@ final class NetworkService: Networking {
     
         guard let token = authService.token else { return }
         
-        let params = ["filters": "post, photo"]
+        
         var allParams = params
         allParams["access_token"] = token
         allParams["v"] = API.version
-        
         let url = self.url(from: path, params: allParams)
         print(url)
         let request = URLRequest(url: url)

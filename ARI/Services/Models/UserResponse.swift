@@ -15,4 +15,14 @@ struct UserResponseWrapped: Decodable {
 
 struct UserResponse: Decodable {
     let photo100: String?
+    let bdate: String?
+    let sex: Int?
+    let firstName: String
+    let lastName: String
+    let city: City?
+}
+
+struct City: Decodable {
+    let id: Int?
+    let title: String?
 }

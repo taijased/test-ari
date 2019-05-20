@@ -22,15 +22,28 @@
                                 <rect key="frame" x="136" y="318.5" width="103" height="30"/>
                                 <state key="normal" title="Sign in with VK"/>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="W8F-YC-Trw">
+                                <rect key="frame" x="121.5" y="356" width="132" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="132" id="Zoq-fv-imQ"/>
+                                    <constraint firstAttribute="height" constant="30" id="tjd-cQ-ZRn"/>
+                                </constraints>
+                                <state key="normal" title="Sign in with Google">
+                                    <color key="titleColor" red="1" green="0.45879564589999999" blue="0.45037570399999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                </state>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="AvT-E8-4fh" firstAttribute="centerY" secondItem="Q8V-Pf-tUe" secondAttribute="centerY" id="4fv-AQ-27v"/>
-                            <constraint firstItem="AvT-E8-4fh" firstAttribute="centerX" secondItem="Q8V-Pf-tUe" secondAttribute="centerX" id="Yep-CU-JTT"/>
+                            <constraint firstItem="AvT-E8-4fh" firstAttribute="centerX" secondItem="Q8V-Pf-tUe" secondAttribute="centerX" id="7mE-J3-PCU"/>
+                            <constraint firstItem="W8F-YC-Trw" firstAttribute="centerX" secondItem="hO7-24-keA" secondAttribute="centerX" id="EAj-rp-zxV"/>
+                            <constraint firstItem="AvT-E8-4fh" firstAttribute="centerY" secondItem="Q8V-Pf-tUe" secondAttribute="centerY" id="YTo-wW-g8g"/>
+                            <constraint firstItem="W8F-YC-Trw" firstAttribute="top" secondItem="AvT-E8-4fh" secondAttribute="bottom" constant="7.5" id="f16-L8-PJg"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="hO7-24-keA"/>
                     </view>
                     <connections>
+                        <outlet property="buttonSignInGoogle" destination="W8F-YC-Trw" id="Mhb-Fb-yus"/>
                         <outlet property="buttonSignInVK" destination="AvT-E8-4fh" id="1es-Rx-8ZN"/>
                     </connections>
                 </viewController>

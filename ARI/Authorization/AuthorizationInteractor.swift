@@ -27,7 +27,6 @@ class AuthorizationInteractor: AuthorizationBusinessLogic {
     case .getUser(let socialName):
         
         service?.getUser(socialName: socialName, completion: { [weak self] (user) in
-            print(user)
             self?.presenter?.presentData(response: Authorization.Model.Response.ResponseType.presentUserInfo(user: user))
         })
 

@@ -30,17 +30,20 @@ struct NetworkDataFetcher: DataFetcher {
     
             guard let userId = authService.userId else { return }
             
-            let params = ["user_ids": userId, "fields": "photo_100"]
+            let params = ["user_ids": userId, "fields": "first_name, last_name, sex, photo_100, bdate, city"]
+            
             networking.request(path: API.user, params: params) { (data, error) in
                 if let error = error {
                     print("Error received requesting data: \(error.localizedDescription)")
                     response(nil)
                 }
-                
                 let decoded = self.decodeJSON(type: UserResponseWrapped.self, from: data)
-                print(decoded?.response.first)
+//                print(decoded?.response.first)
                 response(decoded?.response.first)
             }
+        case "google":
+            print(socialName)
+            
         default:
             response(nil)
             break

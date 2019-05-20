@@ -120,8 +120,8 @@
 				8AC08B5C22917AFA0093F570 /* Models */,
 				8AC08B5A229178CD0093F570 /* AuthService.swift */,
 				8AC08B56229172F30093F570 /* NetworkServce.swift */,
-				8AC08B58229173F30093F570 /* API.swift */,
 				8AC08B71229187D60093F570 /* NetworkDataFetcher.swift */,
+				8AC08B58229173F30093F570 /* API.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";

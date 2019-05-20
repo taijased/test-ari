@@ -9,14 +9,18 @@
 import UIKit
 
 protocol AuthorizationPresentationLogic {
-  func presentData(response: Authorization.Model.Response.ResponseType)
+    func presentData(response: Authorization.Model.Response.ResponseType)
 }
 
 class AuthorizationPresenter: AuthorizationPresentationLogic {
-  weak var viewController: AuthorizationDisplayLogic?
-  
-  func presentData(response: Authorization.Model.Response.ResponseType) {
-  
-  }
-  
+    weak var viewController: AuthorizationDisplayLogic?
+    
+    func presentData(response: Authorization.Model.Response.ResponseType) {
+        switch response {
+        
+        case .presentUserInfo(let user):
+            print(user)
+        }
+    }
+    
 }

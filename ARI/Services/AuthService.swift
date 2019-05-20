@@ -56,6 +56,10 @@ final class AuthService: NSObject, VKSdkDelegate, VKSdkUIDelegate {
         }
     }
     
+    func wakeUpSessionWithGoogle() {
+        
+    }
+    
     // MARK: VKSdkDelegate
     func vkSdkAccessAuthorizationFinished(with result: VKAuthorizationResult!) {
         print(#function)

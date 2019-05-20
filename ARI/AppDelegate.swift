@@ -8,6 +8,7 @@
 
 import UIKit
 import VK_ios_sdk
+import GoogleSignIn
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -73,4 +74,25 @@ extension AppDelegate: AuthServiceDelegate {
     func authServiceDidSignInFail() {
         print(#function)
     }
+}
+
+
+// MARK: GIDSignInDelegate
+
+extension AppDelegate: GIDSignInDelegate {
+    func sign(_ signIn: GIDSignIn!, didSignInFor user: GIDGoogleUser!, withError error: Error!) {
+        <#code#>
+    }
+    
+    func application(_ application: UIApplication,
+                     didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
+        // Initialize sign-in
+        GIDSignIn.sharedInstance().clientID = "136451453907-h8tt30oad17p16omlmgk5r33s7sjndid.apps.googleusercontent.com"
+        GIDSignIn.sharedInstance().delegate = self
+        
+        return true
+    }
+    
+    
+    
 }

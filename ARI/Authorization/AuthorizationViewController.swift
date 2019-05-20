@@ -24,6 +24,11 @@ class AuthorizationViewController: UIViewController, AuthorizationDisplayLogic {
         }
     }
     
+    @IBOutlet weak var buttonSignInGoogle: UIButton! {
+        didSet {
+            buttonSignInGoogle.addTarget(self, action: #selector(getGoogleUserInfo), for: .touchUpInside)
+        }
+    }
     // MARK: Setup
     
     private func setup() {
@@ -66,4 +71,11 @@ class AuthorizationViewController: UIViewController, AuthorizationDisplayLogic {
         authService.wakeUpSession()
         interactor?.makeRequest(request: Authorization.Model.Request.RequestType.getUser(socialName: "vk"))
     }
+    
+    
+    @objc func getGoogleUserInfo() {
+//        authService.wakeUpSession()
+        interactor?.makeRequest(request: Authorization.Model.Request.RequestType.getUser(socialName: "google"))
+    }
+    
 }
