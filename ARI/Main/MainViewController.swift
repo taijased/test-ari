@@ -16,8 +16,16 @@ class MainViewController: UIViewController, MainDisplayLogic {
     
     var interactor: MainBusinessLogic?
     var router: (NSObjectProtocol & MainRoutingLogic)?
-    private var bottomControls = MainBottomControls()
     
+    private var bottomControls = MainBottomControls()
+    private var topSaleCollectionView = TopSaleCollectionView()
+    
+    @IBOutlet weak var topSaleView: UIView! {
+        didSet {
+            topSaleView.backgroundColor = .clear
+            
+        }
+    }
     
     // MARK: Setup
     private func setup() {
@@ -43,8 +51,17 @@ class MainViewController: UIViewController, MainDisplayLogic {
         
         setup()
         setupBottomControls()
+        setupTopSaleCollection()
     }
     
+    private func setupTopSaleCollection() {
+        topSaleView.addSubview(topSaleCollectionView)
+        topSaleCollectionView.topAnchor.constraint(equalTo: topSaleView.topAnchor, constant: 60).isActive = true
+        topSaleCollectionView.trailingAnchor.constraint(equalTo: topSaleView.trailingAnchor).isActive = true
+        topSaleCollectionView.leadingAnchor.constraint(equalTo: topSaleView.leadingAnchor).isActive = true
+        topSaleCollectionView.bottomAnchor.constraint(equalTo: topSaleView.bottomAnchor,  constant: 20).isActive = true
+
+    }
     private func setupBottomControls() {
         view.addSubview(bottomControls)
         bottomControls.translatesAutoresizingMaskIntoConstraints = false

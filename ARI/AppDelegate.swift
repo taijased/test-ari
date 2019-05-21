@@ -24,6 +24,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
          window = UIWindow()
         
+        // Initialize sign-in Google
+        GIDSignIn.sharedInstance().clientID = "136451453907-h8tt30oad17p16omlmgk5r33s7sjndid.apps.googleusercontent.com"
+        GIDSignIn.sharedInstance().delegate = self
         
         // MARK: Sign In VK
         
@@ -36,11 +39,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 //        let mainVC: MainViewController = MainViewController.loadFromStoryboard()
         
         
-        let authVC: AuthorizationViewController = AuthorizationViewController.loadFromStoryboard()
-        let navigationVC = UINavigationController(rootViewController: authVC)
-        window?.rootViewController = navigationVC
-        window?.makeKeyAndVisible()
+//        let authVC: AuthorizationViewController = AuthorizationViewController.loadFromStoryboard()
+//        let navigationVC = UINavigationController(rootViewController: authVC)
+//        window?.rootViewController = navigationVC
+//        window?.makeKeyAndVisible()
         
+        let mainVC: MainViewController = MainViewController.loadFromStoryboard()
+//        let navigationVC = UINavigationController(rootViewController: mainVC)
+        window?.rootViewController = mainVC
+        window?.makeKeyAndVisible()
         return true
     }
 }
@@ -81,17 +88,15 @@ extension AppDelegate: AuthServiceDelegate {
 
 extension AppDelegate: GIDSignInDelegate {
     func sign(_ signIn: GIDSignIn!, didSignInFor user: GIDGoogleUser!, withError error: Error!) {
-        <#code#>
+        print("sign in google")
     }
     
-    func application(_ application: UIApplication,
-                     didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        // Initialize sign-in
-        GIDSignIn.sharedInstance().clientID = "136451453907-h8tt30oad17p16omlmgk5r33s7sjndid.apps.googleusercontent.com"
-        GIDSignIn.sharedInstance().delegate = self
-        
-        return true
-    }
+//    func application(_ app: UIApplication, open url: URL, options: [UIApplication.OpenURLOptionsKey : Any] = [:]) -> Bool {
+//        return GIDSignIn.sharedInstance().handle(url as URL?,
+//                                                 sourceApplication: options[UIApplicationOpenURLOptionsKey.sourceApplication] as? String,
+//                                                 annotation: options[UIApplicationOpenURLOptionsKey.annotation])
+//    }
+//
     
     
     
