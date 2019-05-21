@@ -19,6 +19,7 @@ class MainViewController: UIViewController, MainDisplayLogic {
     
     private var bottomControls = MainBottomControls()
     private var topSaleCollectionView = TopSaleCollectionView()
+    private var sectionCollectionView = SectionCollectionView()
     
     @IBOutlet weak var topSaleView: UIView! {
         didSet {
@@ -50,8 +51,10 @@ class MainViewController: UIViewController, MainDisplayLogic {
         super.viewDidLoad()
         
         setup()
-        setupBottomControls()
+        
         setupTopSaleCollection()
+        setupSectionCollection()
+        setupBottomControls()
     }
     
     private func setupTopSaleCollection() {
@@ -61,6 +64,15 @@ class MainViewController: UIViewController, MainDisplayLogic {
         topSaleCollectionView.leadingAnchor.constraint(equalTo: topSaleView.leadingAnchor).isActive = true
         topSaleCollectionView.bottomAnchor.constraint(equalTo: topSaleView.bottomAnchor,  constant: 20).isActive = true
 
+    }
+    
+    private func setupSectionCollection() {
+        
+        view.addSubview(sectionCollectionView)
+        sectionCollectionView.topAnchor.constraint(equalTo: view.topAnchor, constant: topSaleView.frame.height).isActive = true
+        sectionCollectionView.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
+        sectionCollectionView.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
+        sectionCollectionView.bottomAnchor.constraint(equalTo: view.bottomAnchor,  constant: 20).isActive = true
     }
     private func setupBottomControls() {
         view.addSubview(bottomControls)
