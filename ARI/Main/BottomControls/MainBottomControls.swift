@@ -17,8 +17,8 @@ class MainBottomControls: UIView {
     
     weak var delegate: BottomControlsDelegate?
     
-    let settingsButton: UIButton = {
-        var button = UIButton.getCustomtButton(imageName: "settings")
+    let accountButton: UIButton = {
+        var button = UIButton.getCustomtButton(imageName: "account")
         button.addTarget(self, action: #selector(settingsTapped), for: .touchUpInside)
         return button
     }()
@@ -47,7 +47,7 @@ class MainBottomControls: UIView {
     
     @objc func settingsTapped(_ sender: UIButton) {
         sender.flash()
-        delegate?.bottomControlActions(buttonName: "settings")
+        delegate?.bottomControlActions(buttonName: "account")
     }
     
     @objc func searchTapped(_ sender: UIButton) {
@@ -65,21 +65,21 @@ class MainBottomControls: UIView {
     }
     
     private func overlayFirstLayer() {
-        addSubview(settingsButton)
-        settingsButton.centerYAnchor.constraint(equalTo: centerYAnchor).isActive = true
-        settingsButton.trailingAnchor.constraint(equalTo: trailingAnchor).isActive = true
-        settingsButton.widthAnchor.constraint(equalToConstant: 50).isActive = true
-        settingsButton.heightAnchor.constraint(equalToConstant: 50).isActive = true
+        addSubview(accountButton)
+        accountButton.topAnchor.constraint(equalTo: topAnchor).isActive = true
+        accountButton.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -10).isActive = true
+        accountButton.widthAnchor.constraint(equalToConstant: 50).isActive = true
+        accountButton.heightAnchor.constraint(equalToConstant: 50).isActive = true
         
         addSubview(searchButton)
-        searchButton.centerYAnchor.constraint(equalTo: centerYAnchor).isActive = true
-        searchButton.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -120).isActive = true
+        searchButton.topAnchor.constraint(equalTo: topAnchor).isActive = true
+        searchButton.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -70).isActive = true
         searchButton.widthAnchor.constraint(equalToConstant: 50).isActive = true
         searchButton.heightAnchor.constraint(equalToConstant: 50).isActive = true
         
         addSubview(plusButton)
-        plusButton.centerYAnchor.constraint(equalTo: centerYAnchor).isActive = true
-        plusButton.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -60).isActive = true
+        plusButton.topAnchor.constraint(equalTo: topAnchor).isActive = true
+        plusButton.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 10).isActive = true
         plusButton.widthAnchor.constraint(equalToConstant: 50).isActive = true
         plusButton.heightAnchor.constraint(equalToConstant: 50).isActive = true
         

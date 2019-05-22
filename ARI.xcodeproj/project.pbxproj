@@ -14,6 +14,8 @@
 		8A72B8F22294520B00FD5F22 /* TempTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A72B8F12294520B00FD5F22 /* TempTest.swift */; };
 		8A72B8F42294530600FD5F22 /* CategoryCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A72B8F32294530600FD5F22 /* CategoryCollectionView.swift */; };
 		8A72B8F62294531500FD5F22 /* CategoryCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A72B8F52294531500FD5F22 /* CategoryCollectionViewCell.swift */; };
+		8AA783C8229573A300ADFD91 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AA783C7229573A300ADFD91 /* Constants.swift */; };
+		8AA783CA2295757800ADFD91 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8AA783C92295757800ADFD91 /* Assets.xcassets */; };
 		8AC08B48229164160093F570 /* credentials.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8AC08B47229164160093F570 /* credentials.plist */; };
 		8AC08B552291704E0093F570 /* VK_ios_sdk.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8AC08B542291704E0093F570 /* VK_ios_sdk.framework */; };
 		8AC08B57229172F30093F570 /* NetworkServce.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AC08B56229172F30093F570 /* NetworkServce.swift */; };
@@ -29,7 +31,6 @@
 		8AC08B70229184B70093F570 /* AuthorizationViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8AC08B6F229184B70093F570 /* AuthorizationViewController.storyboard */; };
 		8AC08B72229187D60093F570 /* NetworkDataFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AC08B71229187D60093F570 /* NetworkDataFetcher.swift */; };
 		8AF7AB7E228ECC26000F1D7E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AF7AB7D228ECC26000F1D7E /* AppDelegate.swift */; };
-		8AF7AB85228ECC27000F1D7E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8AF7AB84228ECC27000F1D7E /* Assets.xcassets */; };
 		8AF7AB88228ECC27000F1D7E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8AF7AB86228ECC27000F1D7E /* LaunchScreen.storyboard */; };
 		8AF7ABA0228ECD80000F1D7E /* UIViewController + Storyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AF7AB9F228ECD80000F1D7E /* UIViewController + Storyboard.swift */; };
 		8AF7ABA2228ECD9E000F1D7E /* WebImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AF7ABA1228ECD9E000F1D7E /* WebImageView.swift */; };
@@ -58,6 +59,8 @@
 		8A72B8F12294520B00FD5F22 /* TempTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TempTest.swift; sourceTree = "<group>"; };
 		8A72B8F32294530600FD5F22 /* CategoryCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryCollectionView.swift; sourceTree = "<group>"; };
 		8A72B8F52294531500FD5F22 /* CategoryCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryCollectionViewCell.swift; sourceTree = "<group>"; };
+		8AA783C7229573A300ADFD91 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		8AA783C92295757800ADFD91 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8AC08B47229164160093F570 /* credentials.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = credentials.plist; sourceTree = "<group>"; };
 		8AC08B542291704E0093F570 /* VK_ios_sdk.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = VK_ios_sdk.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8AC08B56229172F30093F570 /* NetworkServce.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkServce.swift; sourceTree = "<group>"; };
@@ -74,7 +77,6 @@
 		8AC08B71229187D60093F570 /* NetworkDataFetcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkDataFetcher.swift; sourceTree = "<group>"; };
 		8AF7AB7A228ECC26000F1D7E /* ARI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ARI.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8AF7AB7D228ECC26000F1D7E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		8AF7AB84228ECC27000F1D7E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8AF7AB87228ECC27000F1D7E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		8AF7AB89228ECC27000F1D7E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8AF7AB9F228ECD80000F1D7E /* UIViewController + Storyboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController + Storyboard.swift"; sourceTree = "<group>"; };
@@ -202,8 +204,8 @@
 				8AF7ABB9228EE578000F1D7E /* Main */,
 				8AC08B5022916B1F0093F570 /* Services */,
 				8AF7AB9E228ECD26000F1D7E /* Helpers */,
-				8AF7AB84228ECC27000F1D7E /* Assets.xcassets */,
 				8AF7AB86228ECC27000F1D7E /* LaunchScreen.storyboard */,
+				8AA783C92295757800ADFD91 /* Assets.xcassets */,
 				8AF7AB89228ECC27000F1D7E /* Info.plist */,
 				8AC08B47229164160093F570 /* credentials.plist */,
 			);
@@ -219,6 +221,7 @@
 				8AF7ABAE228EDC9E000F1D7E /* UIColor + Hex.swift */,
 				8AF7ABD8228F15AC000F1D7E /* UIButton + Custom.swift */,
 				8A72B8F12294520B00FD5F22 /* TempTest.swift */,
+				8AA783C7229573A300ADFD91 /* Constants.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -322,7 +325,7 @@
 				8AC08B70229184B70093F570 /* AuthorizationViewController.storyboard in Resources */,
 				8AC08B48229164160093F570 /* credentials.plist in Resources */,
 				8AF7ABC9228EE5B8000F1D7E /* MainViewController.storyboard in Resources */,
-				8AF7AB85228ECC27000F1D7E /* Assets.xcassets in Resources */,
+				8AA783CA2295757800ADFD91 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -413,6 +416,7 @@
 				8AC08B5E22917B0D0093F570 /* UserResponse.swift in Sources */,
 				8AF7ABC5228EE58E000F1D7E /* MainViewController.swift in Sources */,
 				8AF7ABA2228ECD9E000F1D7E /* WebImageView.swift in Sources */,
+				8AA783C8229573A300ADFD91 /* Constants.swift in Sources */,
 				8AF7ABC4228EE58E000F1D7E /* MainModels.swift in Sources */,
 				8AF7ABD1228EF1FD000F1D7E /* MainBottomControls.swift in Sources */,
 				8AC08B692291848C0093F570 /* AuthorizationWorker.swift in Sources */,

@@ -85,12 +85,11 @@ class MainViewController: UIViewController, MainDisplayLogic {
         view.addSubview(bottomControls)
         bottomControls.translatesAutoresizingMaskIntoConstraints = false
         
-        bottomControls.anchor(top: nil,
-                              leading: nil,
-                              bottom: view.bottomAnchor,
-                              trailing: view.trailingAnchor,
-                              padding: UIEdgeInsets(top: 777, left: 777, bottom: 15, right: 8),
-                              size: CGSize(width: 170, height: 50))
+        bottomControls.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
+        bottomControls.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
+        bottomControls.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
+        bottomControls.heightAnchor.constraint(equalToConstant: Constants.bottomControlsHeight).isActive = true
+
         
         bottomControls.delegate = self
     }
