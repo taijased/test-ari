@@ -24,7 +24,11 @@ class MainViewController: UIViewController, MainDisplayLogic {
     @IBOutlet weak var topSaleView: UIView! {
         didSet {
             topSaleView.backgroundColor = .clear
-            
+        }
+    }
+    @IBOutlet weak var categoryView: UIView! {
+        didSet {
+            categoryView.translatesAutoresizingMaskIntoConstraints = false
         }
     }
     
@@ -49,7 +53,7 @@ class MainViewController: UIViewController, MainDisplayLogic {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        print(view.frame)
         setup()
         
         setupTopSaleCollection()
@@ -63,16 +67,19 @@ class MainViewController: UIViewController, MainDisplayLogic {
         topSaleCollectionView.trailingAnchor.constraint(equalTo: topSaleView.trailingAnchor).isActive = true
         topSaleCollectionView.leadingAnchor.constraint(equalTo: topSaleView.leadingAnchor).isActive = true
         topSaleCollectionView.bottomAnchor.constraint(equalTo: topSaleView.bottomAnchor,  constant: 20).isActive = true
-
+        
     }
     
     private func setupSectionCollection() {
+        categoryView.frame.size.width = view.frame.size.width
+        categoryView.frame.size.height = view.frame.size.height
         
-        view.addSubview(sectionCollectionView)
-        sectionCollectionView.topAnchor.constraint(equalTo: view.topAnchor, constant: topSaleView.frame.height).isActive = true
-        sectionCollectionView.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
-        sectionCollectionView.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
-        sectionCollectionView.bottomAnchor.constraint(equalTo: view.bottomAnchor,  constant: 20).isActive = true
+        categoryView.addSubview(sectionCollectionView)
+        sectionCollectionView.fillSuperview()
+        //        sectionCollectionView.topAnchor.constraint(equalTo: view.topAnchor, constant: topSaleView.frame.height).isActive = true
+        //        sectionCollectionView.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
+        //        sectionCollectionView.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
+        //        sectionCollectionView.bottomAnchor.constraint(equalTo: view.bottomAnchor,  constant: 20).isActive = true
     }
     private func setupBottomControls() {
         view.addSubview(bottomControls)
@@ -110,5 +117,5 @@ extension MainViewController: BottomControlsDelegate {
         default: break
         }
     }
-
+    
 }

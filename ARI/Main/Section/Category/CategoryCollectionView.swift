@@ -57,6 +57,25 @@ extension CategoryCollectionView: UICollectionViewDelegate, UICollectionViewData
     }
     
     
+//    func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
+//        print(scrollView)
+//    }
+//
+//    func scrollViewDidScrollToTop(_ scrollView: UIScrollView) {
+//        print(#function)
+//    }
+//
+//    func scrollViewDidEndDragging(_ scrollView: UIScrollView, willDecelerate decelerate: Bool) {
+//        print(#function)
+//    }
+    func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
+        print(#function)
+    }
+    
+    
+    func scrollViewWillBeginDragging(_ scrollView: UIScrollView) {
+        print(#function)
+    }
 }
 
 

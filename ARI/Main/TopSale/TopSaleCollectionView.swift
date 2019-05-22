@@ -21,7 +21,7 @@ class TopSaleCollectionView: UICollectionView {
         let layout = UICollectionViewFlowLayout()
         layout.scrollDirection = .horizontal
         super.init(frame: .zero, collectionViewLayout: layout)
-        backgroundColor = .white
+        backgroundColor = .clear
         setupCollectionSettings()
         
     }
@@ -49,6 +49,7 @@ class TopSaleCollectionView: UICollectionView {
 
 // MARK: UICollectionViewDelegate, UICollectionViewDataSource
 extension TopSaleCollectionView: UICollectionViewDelegate, UICollectionViewDataSource {
+    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return Int.random(in: 4..<9)
     }
@@ -58,6 +59,7 @@ extension TopSaleCollectionView: UICollectionViewDelegate, UICollectionViewDataS
         cell.set(imageUrl: "https://kor.ill.in.ua/m/610x385/1804612.jpg")
         return cell
     }
+    
 }
 
 // MARK: UICollectionViewDelegateFlowLayout
