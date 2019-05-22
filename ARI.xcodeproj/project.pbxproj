@@ -16,6 +16,7 @@
 		8A72B8F62294531500FD5F22 /* CategoryCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A72B8F52294531500FD5F22 /* CategoryCollectionViewCell.swift */; };
 		8AA783C8229573A300ADFD91 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AA783C7229573A300ADFD91 /* Constants.swift */; };
 		8AA783CA2295757800ADFD91 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8AA783C92295757800ADFD91 /* Assets.xcassets */; };
+		8AA783CE22957CC000ADFD91 /* temp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AA783CD22957CC000ADFD91 /* temp.swift */; };
 		8AC08B48229164160093F570 /* credentials.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8AC08B47229164160093F570 /* credentials.plist */; };
 		8AC08B552291704E0093F570 /* VK_ios_sdk.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8AC08B542291704E0093F570 /* VK_ios_sdk.framework */; };
 		8AC08B57229172F30093F570 /* NetworkServce.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AC08B56229172F30093F570 /* NetworkServce.swift */; };
@@ -61,6 +62,7 @@
 		8A72B8F52294531500FD5F22 /* CategoryCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryCollectionViewCell.swift; sourceTree = "<group>"; };
 		8AA783C7229573A300ADFD91 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		8AA783C92295757800ADFD91 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		8AA783CD22957CC000ADFD91 /* temp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = temp.swift; sourceTree = "<group>"; };
 		8AC08B47229164160093F570 /* credentials.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = credentials.plist; sourceTree = "<group>"; };
 		8AC08B542291704E0093F570 /* VK_ios_sdk.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = VK_ios_sdk.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8AC08B56229172F30093F570 /* NetworkServce.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkServce.swift; sourceTree = "<group>"; };
@@ -222,6 +224,7 @@
 				8AF7ABD8228F15AC000F1D7E /* UIButton + Custom.swift */,
 				8A72B8F12294520B00FD5F22 /* TempTest.swift */,
 				8AA783C7229573A300ADFD91 /* Constants.swift */,
+				8AA783CD22957CC000ADFD91 /* temp.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -429,6 +432,7 @@
 				8AF7ABA0228ECD80000F1D7E /* UIViewController + Storyboard.swift in Sources */,
 				8A72B8F62294531500FD5F22 /* CategoryCollectionViewCell.swift in Sources */,
 				8AF7ABD9228F15AC000F1D7E /* UIButton + Custom.swift in Sources */,
+				8AA783CE22957CC000ADFD91 /* temp.swift in Sources */,
 				8AF7AB7E228ECC26000F1D7E /* AppDelegate.swift in Sources */,
 				8AC08B5B229178CD0093F570 /* AuthService.swift in Sources */,
 				8A72B8F42294530600FD5F22 /* CategoryCollectionView.swift in Sources */,

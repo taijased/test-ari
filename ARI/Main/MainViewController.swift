@@ -84,12 +84,10 @@ class MainViewController: UIViewController, MainDisplayLogic {
     private func setupBottomControls() {
         view.addSubview(bottomControls)
         bottomControls.translatesAutoresizingMaskIntoConstraints = false
-        
         bottomControls.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
         bottomControls.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
         bottomControls.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
         bottomControls.heightAnchor.constraint(equalToConstant: Constants.bottomControlsHeight).isActive = true
-
         
         bottomControls.delegate = self
     }
@@ -112,7 +110,7 @@ extension MainViewController: BottomControlsDelegate {
         switch buttonName {
         case "settings": print(buttonName)
         case "search": print(buttonName)
-        case "plus": print(buttonName)
+        case "account": print(buttonName)
         default: break
         }
     }
