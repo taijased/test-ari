@@ -18,8 +18,9 @@ class MainViewController: UIViewController, MainDisplayLogic {
     var router: (NSObjectProtocol & MainRoutingLogic)?
     
     private var bottomControls = MainBottomControls()
-    private var topSaleCollectionView = TopSaleCollectionView()
+    private var topSaleCollectionView = ReadySolutionCollectionView()
     private var sectionCollectionView = SectionCollectionView()
+    private var categoryNameCollectionView = CategoryNameCollectionView()
     
     @IBOutlet weak var topSaleView: UIView! {
         didSet {
@@ -32,6 +33,19 @@ class MainViewController: UIViewController, MainDisplayLogic {
         }
     }
     
+    @IBOutlet weak var categoryNameView: UIView! {
+        didSet {
+//
+//            categoryNameView.backgroundColor = .clear
+//            // 2
+//            let blurEffect = UIBlurEffect(style: .light)
+//            // 3
+//            let blurView = UIVisualEffectView(effect: blurEffect)
+//            // 4
+//            blurView.translatesAutoresizingMaskIntoConstraints = false
+//            categoryNameView.insertSubview(blurView, at: 0)
+        }
+    }
     // MARK: Setup
     private func setup() {
         let viewController        = self
@@ -57,8 +71,14 @@ class MainViewController: UIViewController, MainDisplayLogic {
         setup()
         
         setupTopSaleCollection()
+        setupCategoryNameCollection()
         setupSectionCollection()
         setupBottomControls()
+    }
+    
+    private func setupCategoryNameCollection() {
+        categoryNameView.addSubview(categoryNameCollectionView)
+        categoryNameCollectionView.fillSuperview()
     }
     
     private func setupTopSaleCollection() {

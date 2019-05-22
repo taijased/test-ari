@@ -24,12 +24,12 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Rt5-Yy-ewK">
                                         <rect key="frame" x="20" y="20" width="414" height="250"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Лучшие предложения" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="etQ-l2-jbz">
-                                                <rect key="frame" x="20" y="28" width="243" height="27"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Готовые решения" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="etQ-l2-jbz">
+                                                <rect key="frame" x="20" y="28" width="195" height="27"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="22"/>
-                                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                <nil key="highlightedColor"/>
+                                                <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="22"/>
+                                                <color key="textColor" red="0.12941176470588234" green="0.12858575582504272" blue="0.15804943442344666" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <color key="highlightedColor" cocoaTouchSystemColor="viewFlipsideBackgroundColor"/>
                                             </label>
                                         </subviews>
                                         <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -73,6 +73,7 @@
                     </view>
                     <size key="freeformSize" width="414" height="900"/>
                     <connections>
+                        <outlet property="categoryNameView" destination="MQJ-qM-AYg" id="J2p-yn-0U1"/>
                         <outlet property="categoryView" destination="oq8-6D-Vs3" id="9Mt-Uo-uvS"/>
                         <outlet property="topSaleView" destination="Rt5-Yy-ewK" id="0hf-lF-jJr"/>
                     </connections>

@@ -1,5 +1,5 @@
 //
-//  TopSaleCollectionViewCell.swift
+//  ReadySolutionCollectionViewCell
 //  ARI
 //
 //  Created by Maxim Spiridonov on 21/05/2019.
@@ -8,9 +8,9 @@
 
 import UIKit
 
-class TopSaleCollectionViewCell: UICollectionViewCell {
+class ReadySolutionCollectionViewCell: UICollectionViewCell {
     
-    static let reuseId = "TopSaleCollectionViewCell"
+    static let reuseId = "ReadySolutionCollectionViewCell"
     
     let myImageView: WebImageView = {
         let imageView = WebImageView()

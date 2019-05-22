@@ -1,21 +1,23 @@
+
 //
-//  TopSaleCollectionView.swift
+//  CategoryNameCollectionView.swift
 //  ARI
 //
-//  Created by Maxim Spiridonov on 21/05/2019.
+//  Created by Maxim Spiridonov on 22/05/2019.
 //  Copyright © 2019 Maxim Spiridonov. All rights reserved.
 //
 
 import UIKit
 
 
-struct TopSaleViewModel {
+
+struct CategoryNameViewModel {
     
 }
 
-class TopSaleCollectionView: UICollectionView {
+class CategoryNameCollectionView: UICollectionView {
     
-    var cells = [TopSaleViewModel]()
+    var cells = [CategoryNameViewModel]()
     
     init() {
         let layout = UICollectionViewFlowLayout()
@@ -28,14 +30,14 @@ class TopSaleCollectionView: UICollectionView {
     
     
     
-    func set(cells: [TopSaleViewModel]) {
+    func set(cells: [CategoryNameViewModel]) {
         self.cells = cells
     }
     
     private func setupCollectionSettings() {
         delegate = self
         dataSource = self
-        register(TopSaleCollectionViewCell.self, forCellWithReuseIdentifier: TopSaleCollectionViewCell.reuseId)
+        register(CategoryNameCollectionViewCell.self, forCellWithReuseIdentifier: CategoryNameCollectionViewCell.reuseId)
         translatesAutoresizingMaskIntoConstraints = false
         showsHorizontalScrollIndicator = false
         showsVerticalScrollIndicator = false
@@ -48,15 +50,16 @@ class TopSaleCollectionView: UICollectionView {
 }
 
 // MARK: UICollectionViewDelegate, UICollectionViewDataSource
-extension TopSaleCollectionView: UICollectionViewDelegate, UICollectionViewDataSource {
+extension CategoryNameCollectionView: UICollectionViewDelegate, UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return Int.random(in: 4..<9)
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = dequeueReusableCell(withReuseIdentifier: TopSaleCollectionViewCell.reuseId, for: indexPath) as! TopSaleCollectionViewCell
-        cell.set(imageUrl: "https://kor.ill.in.ua/m/610x385/1804612.jpg")
+        let cell = dequeueReusableCell(withReuseIdentifier: CategoryNameCollectionViewCell.reuseId, for: indexPath) as! CategoryNameCollectionViewCell
+        cell.backgroundColor = .random()
+        cell.set(label: "\(indexPath.row)")
         return cell
     }
     
@@ -64,25 +67,25 @@ extension TopSaleCollectionView: UICollectionViewDelegate, UICollectionViewDataS
 
 // MARK: UICollectionViewDelegateFlowLayout
 
-extension TopSaleCollectionView: UICollectionViewDelegateFlowLayout {
+extension CategoryNameCollectionView: UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView,
                         layout collectionViewLayout: UICollectionViewLayout,
                         sizeForItemAt indexPath: IndexPath) -> CGSize {
         
-        return CGSize(width: 160*1.6, height: 160)
+        return CGSize(width: 100, height: 50)
     }
     
     func collectionView(_ collectionView: UICollectionView,
                         layout collectionViewLayout: UICollectionViewLayout,
                         minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
-        return 20.0
+        return 0.0
     }
     
     func collectionView(_ collectionView: UICollectionView, layout
         collectionViewLayout: UICollectionViewLayout,
                         minimumLineSpacingForSectionAt section: Int) -> CGFloat {
-        return 20.0
+        return 0.0
     }
     
 }
