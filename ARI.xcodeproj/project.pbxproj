@@ -18,6 +18,7 @@
 		8AA783CA2295757800ADFD91 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8AA783C92295757800ADFD91 /* Assets.xcassets */; };
 		8AA783DE2295862600ADFD91 /* CategoryNameCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AA783DD2295862600ADFD91 /* CategoryNameCollectionView.swift */; };
 		8AA783E02295863100ADFD91 /* CategoryNameCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AA783DF2295863100ADFD91 /* CategoryNameCollectionViewCell.swift */; };
+		8AA783E322958C0100ADFD91 /* TTNorms-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 8AA783E222958C0100ADFD91 /* TTNorms-Bold.otf */; };
 		8AC08B48229164160093F570 /* credentials.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8AC08B47229164160093F570 /* credentials.plist */; };
 		8AC08B552291704E0093F570 /* VK_ios_sdk.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8AC08B542291704E0093F570 /* VK_ios_sdk.framework */; };
 		8AC08B57229172F30093F570 /* NetworkServce.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AC08B56229172F30093F570 /* NetworkServce.swift */; };
@@ -65,6 +66,7 @@
 		8AA783C92295757800ADFD91 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8AA783DD2295862600ADFD91 /* CategoryNameCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryNameCollectionView.swift; sourceTree = "<group>"; };
 		8AA783DF2295863100ADFD91 /* CategoryNameCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryNameCollectionViewCell.swift; sourceTree = "<group>"; };
+		8AA783E222958C0100ADFD91 /* TTNorms-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "TTNorms-Bold.otf"; sourceTree = "<group>"; };
 		8AC08B47229164160093F570 /* credentials.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = credentials.plist; sourceTree = "<group>"; };
 		8AC08B542291704E0093F570 /* VK_ios_sdk.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = VK_ios_sdk.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8AC08B56229172F30093F570 /* NetworkServce.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkServce.swift; sourceTree = "<group>"; };
@@ -157,6 +159,14 @@
 			path = CategoryName;
 			sourceTree = "<group>";
 		};
+		8AA783E122958BA600ADFD91 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				8AA783E222958C0100ADFD91 /* TTNorms-Bold.otf */,
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
 		8AC08B3822915E440093F570 /* Authorization */ = {
 			isa = PBXGroup;
 			children = (
@@ -217,6 +227,7 @@
 				8AF7ABB9228EE578000F1D7E /* Main */,
 				8AC08B5022916B1F0093F570 /* Services */,
 				8AF7AB9E228ECD26000F1D7E /* Helpers */,
+				8AA783E122958BA600ADFD91 /* Fonts */,
 				8AF7AB86228ECC27000F1D7E /* LaunchScreen.storyboard */,
 				8AA783C92295757800ADFD91 /* Assets.xcassets */,
 				8AF7AB89228ECC27000F1D7E /* Info.plist */,
@@ -335,6 +346,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8AA783E322958C0100ADFD91 /* TTNorms-Bold.otf in Resources */,
 				8AF7AB88228ECC27000F1D7E /* LaunchScreen.storyboard in Resources */,
 				8AC08B70229184B70093F570 /* AuthorizationViewController.storyboard in Resources */,
 				8AC08B48229164160093F570 /* credentials.plist in Resources */,

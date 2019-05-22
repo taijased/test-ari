@@ -59,7 +59,7 @@ extension CategoryNameCollectionView: UICollectionViewDelegate, UICollectionView
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = dequeueReusableCell(withReuseIdentifier: CategoryNameCollectionViewCell.reuseId, for: indexPath) as! CategoryNameCollectionViewCell
         cell.backgroundColor = .random()
-        cell.set(label: "\(indexPath.row)")
+        cell.set(label: "\(indexPath.row) Decor")
         return cell
     }
     
