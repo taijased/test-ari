@@ -12,13 +12,17 @@ import UIKit
 
 
 struct CategoryNameViewModel {
-    
+    var label: String
 }
 
 class CategoryNameCollectionView: UICollectionView {
     
-    var cells = [CategoryNameViewModel]()
-    
+    var cells = [CategoryNameViewModel(label: "Стены"),
+                CategoryNameViewModel(label: "Полы"),
+                CategoryNameViewModel(label: "Мебель"),
+                CategoryNameViewModel(label: "Декор"),
+                CategoryNameViewModel(label: "Ванная")]
+
     init() {
         let layout = UICollectionViewFlowLayout()
         layout.scrollDirection = .horizontal
@@ -53,13 +57,12 @@ class CategoryNameCollectionView: UICollectionView {
 extension CategoryNameCollectionView: UICollectionViewDelegate, UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return Int.random(in: 4..<9)
+        return cells.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = dequeueReusableCell(withReuseIdentifier: CategoryNameCollectionViewCell.reuseId, for: indexPath) as! CategoryNameCollectionViewCell
-        cell.backgroundColor = .random()
-        cell.set(label: "\(indexPath.row) Decor")
+        cell.set(label: cells[indexPath.row].label)
         return cell
     }
     
@@ -72,20 +75,19 @@ extension CategoryNameCollectionView: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView,
                         layout collectionViewLayout: UICollectionViewLayout,
                         sizeForItemAt indexPath: IndexPath) -> CGSize {
-        
-        return CGSize(width: 100, height: 50)
-    }
     
-    func collectionView(_ collectionView: UICollectionView,
-                        layout collectionViewLayout: UICollectionViewLayout,
-                        minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
-        return 0.0
+        // hack
+        let label = UILabel()
+        label.font = UIFont(name: "TTNorms-Bold", size: 26)
+        label.text = cells[indexPath.row].label
+        
+        return label.intrinsicContentSize
     }
     
     func collectionView(_ collectionView: UICollectionView, layout
         collectionViewLayout: UICollectionViewLayout,
                         minimumLineSpacingForSectionAt section: Int) -> CGFloat {
-        return 0.0
+        return 20.0
     }
     
 }

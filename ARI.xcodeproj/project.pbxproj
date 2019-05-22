@@ -67,6 +67,7 @@
 		8AA783DD2295862600ADFD91 /* CategoryNameCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryNameCollectionView.swift; sourceTree = "<group>"; };
 		8AA783DF2295863100ADFD91 /* CategoryNameCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryNameCollectionViewCell.swift; sourceTree = "<group>"; };
 		8AA783E222958C0100ADFD91 /* TTNorms-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "TTNorms-Bold.otf"; sourceTree = "<group>"; };
+		8AA783E422958CCD00ADFD91 /* TTNorms-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "TTNorms-Medium.otf"; sourceTree = "<group>"; };
 		8AC08B47229164160093F570 /* credentials.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = credentials.plist; sourceTree = "<group>"; };
 		8AC08B542291704E0093F570 /* VK_ios_sdk.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = VK_ios_sdk.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8AC08B56229172F30093F570 /* NetworkServce.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkServce.swift; sourceTree = "<group>"; };
@@ -163,6 +164,7 @@
 			isa = PBXGroup;
 			children = (
 				8AA783E222958C0100ADFD91 /* TTNorms-Bold.otf */,
+				8AA783E422958CCD00ADFD91 /* TTNorms-Medium.otf */,
 			);
 			path = Fonts;
 			sourceTree = "<group>";

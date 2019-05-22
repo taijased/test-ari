@@ -15,7 +15,8 @@ class CategoryNameCollectionViewCell: UICollectionViewCell {
     let label: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
-        
+        label.textColor = UIColor(red: 0.13, green: 0.13, blue: 0.16, alpha: 1)
+        label.font = UIFont(name: "TTNorms-Bold", size: 26)
         
         return label
     }()
@@ -28,9 +29,14 @@ class CategoryNameCollectionViewCell: UICollectionViewCell {
         label.fillSuperview()
     }
     
-
-    func set(label: String?) {
-        self.label.text = label
+    
+    func set(label: String) {
+          self.label.text = label
+    }
+    
+    
+    func getSizeLabel() -> CGSize {
+        return self.label.intrinsicContentSize
     }
     
     required init?(coder aDecoder: NSCoder) {
