@@ -8,6 +8,8 @@
 
 import UIKit
 
+
+
 class CategoryNameCollectionViewCell: UICollectionViewCell {
     
     static let reuseId = "CategoryNameCollectionViewCell"
@@ -16,6 +18,7 @@ class CategoryNameCollectionViewCell: UICollectionViewCell {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.textColor = UIColor(red: 0.13, green: 0.13, blue: 0.16, alpha: 1)
+//        label.alpha = 0.3
         label.font = UIFont(name: "TTNorms-Bold", size: 26)
         
         return label
@@ -30,8 +33,9 @@ class CategoryNameCollectionViewCell: UICollectionViewCell {
     }
     
     
-    func set(label: String) {
-          self.label.text = label
+    func set(viewModel: CategoryNameViewModel) {
+        self.label.text = viewModel.label
+        self.alpha = viewModel.isActive ? 1 : 0.3
     }
     
     

@@ -9,18 +9,22 @@
 import UIKit
 
 protocol MainBusinessLogic {
-  func makeRequest(request: Main.Model.Request.RequestType)
+    func makeRequest(request: Main.Model.Request.RequestType)
 }
 
 class MainInteractor: MainBusinessLogic {
-
-  var presenter: MainPresentationLogic?
-  var service: MainService?
-  
-  func makeRequest(request: Main.Model.Request.RequestType) {
-    if service == nil {
-      service = MainService()
+    
+    var presenter: MainPresentationLogic?
+    var service: MainService?
+    
+    func makeRequest(request: Main.Model.Request.RequestType) {
+        if service == nil {
+            service = MainService()
+        }
+        switch request {
+        case .getCurrentPage(let page):
+            presenter?.presentData(response: Main.Model.Response.ResponseType.setColorCategoryName(index: page))
+        }
+      
     }
-  }
-  
 }

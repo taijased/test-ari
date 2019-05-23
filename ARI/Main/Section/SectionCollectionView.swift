@@ -13,15 +13,25 @@ struct SectionViewModel {
     
 }
 
+
+
+protocol SectionCollectionViewDelegate: class {
+    func currentPage(indexPage: Int)
+}
+
+
 class SectionCollectionView: UICollectionView {
     
     var cells = [SectionViewModel]()
+    weak var sectionDelegate: SectionCollectionViewDelegate?
+    
+   
+    static var currentPage: Int = 0
     
     init() {
         let layout = UICollectionViewFlowLayout()
         layout.scrollDirection = .horizontal
         super.init(frame: .zero, collectionViewLayout: layout)
-        
         setupCollectionSettings()
         
     }
@@ -30,6 +40,11 @@ class SectionCollectionView: UICollectionView {
     
     func set(cells: [SectionViewModel]) {
         self.cells = cells
+    }
+    
+    func scrollSection(index: Int) {
+        let indexPath = IndexPath(row: index, section: 0)
+        scrollToItem(at: indexPath, at: .centeredHorizontally, animated: true)
     }
     
     private func setupCollectionSettings() {
@@ -49,8 +64,9 @@ class SectionCollectionView: UICollectionView {
 
 
 extension SectionCollectionView: UICollectionViewDelegate, UICollectionViewDataSource {
+    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 3
+        return 5
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -58,6 +74,15 @@ extension SectionCollectionView: UICollectionViewDelegate, UICollectionViewDataS
         cell.set()
         return cell
     }
+    
+    func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
+        
+        let pageWidth: CGFloat = scrollView.frame.size.width
+        let page: Int = Int(floor((scrollView.contentOffset.x - pageWidth / 2) / pageWidth) + 1)
+        
+        sectionDelegate?.currentPage(indexPage: page)
+    }
+ 
 }
 
 
@@ -83,5 +108,3 @@ extension SectionCollectionView: UICollectionViewDelegateFlowLayout {
     }
     
 }
-
-

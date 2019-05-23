@@ -35,15 +35,7 @@ class MainViewController: UIViewController, MainDisplayLogic {
     
     @IBOutlet weak var categoryNameView: UIView! {
         didSet {
-//
 //            categoryNameView.backgroundColor = .clear
-//            // 2
-//            let blurEffect = UIBlurEffect(style: .light)
-//            // 3
-//            let blurView = UIVisualEffectView(effect: blurEffect)
-//            // 4
-//            blurView.translatesAutoresizingMaskIntoConstraints = false
-//            categoryNameView.insertSubview(blurView, at: 0)
         }
     }
     // MARK: Setup
@@ -77,8 +69,11 @@ class MainViewController: UIViewController, MainDisplayLogic {
     }
     
     private func setupCategoryNameCollection() {
+
+//        categoryNameView.frame.size.height = UILabel.getLabelSize(text: "temp", fontSize: 26, fontName: "TTNorms-Bold").height
         categoryNameView.addSubview(categoryNameCollectionView)
         categoryNameCollectionView.fillSuperview()
+        categoryNameCollectionView.categoryDelegate = self
     }
     
     private func setupTopSaleCollection() {
@@ -100,6 +95,9 @@ class MainViewController: UIViewController, MainDisplayLogic {
         //        sectionCollectionView.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
         //        sectionCollectionView.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
         //        sectionCollectionView.bottomAnchor.constraint(equalTo: view.bottomAnchor,  constant: 20).isActive = true
+        
+        sectionCollectionView.sectionDelegate = self
+        
     }
     private func setupBottomControls() {
         view.addSubview(bottomControls)
@@ -135,4 +133,24 @@ extension MainViewController: BottomControlsDelegate {
         }
     }
     
+}
+
+
+//// MARK: SectionCollectionViewDelegate
+
+
+extension MainViewController: SectionCollectionViewDelegate {
+    func currentPage(indexPage: Int) {
+        categoryNameCollectionView.setColor(index: indexPage)
+//        interactor?.makeRequest(request: Main.Model.Request.RequestType.getCurrentPage(page: indexPage))
+    }
+}
+
+
+// MARK: CategoryNameCollectionViewDelegate
+
+extension MainViewController: CategoryNameCollectionViewDelegate {
+    func currentSection(indexPage: Int) {
+        sectionCollectionView.scrollSection(index: indexPage)
+    }
 }

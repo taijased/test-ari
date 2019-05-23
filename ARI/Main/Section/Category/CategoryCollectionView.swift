@@ -35,7 +35,7 @@ class CategoryCollectionView: UICollectionView {
         translatesAutoresizingMaskIntoConstraints = false
         showsHorizontalScrollIndicator = false
         showsVerticalScrollIndicator = false
-        contentInset = UIEdgeInsets(top: 20, left: 20, bottom: 50, right: 20)
+        contentInset = UIEdgeInsets(top: 10, left: 20, bottom: 50, right: 20)
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -65,9 +65,7 @@ extension CategoryCollectionView: UICollectionViewDelegate, UICollectionViewData
 //        print(#function)
 //    }
 //
-//    func scrollViewDidEndDragging(_ scrollView: UIScrollView, willDecelerate decelerate: Bool) {
-//        print(#function)
-//    }
+
     func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
         print(#function)
     }

@@ -106,3 +106,14 @@ extension UIButton {
 //                                                             context: nil).size
 //    }
 //}
+
+
+extension UILabel {
+    static func getLabelSize(text: String, fontSize: CGFloat, fontName: String) -> CGSize {
+        let label = UILabel()
+        label.font = UIFont(name: fontName, size: fontSize)
+        label.text = text
+
+        return label.intrinsicContentSize
+    }
+}

@@ -8,6 +8,9 @@
 
 import UIKit
 
+
+
+
 class SectionCollectionViewCell: UICollectionViewCell {
     
     static let reuseId = "SectionCollectionViewCell"

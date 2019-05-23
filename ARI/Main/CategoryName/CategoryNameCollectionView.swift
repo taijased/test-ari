@@ -13,15 +13,22 @@ import UIKit
 
 struct CategoryNameViewModel {
     var label: String
+    var isActive: Bool
 }
 
+protocol CategoryNameCollectionViewDelegate: class {
+    func currentSection(indexPage: Int)
+}
+
+
 class CategoryNameCollectionView: UICollectionView {
-    
-    var cells = [CategoryNameViewModel(label: "Стены"),
-                CategoryNameViewModel(label: "Полы"),
-                CategoryNameViewModel(label: "Мебель"),
-                CategoryNameViewModel(label: "Декор"),
-                CategoryNameViewModel(label: "Ванная")]
+
+    weak var categoryDelegate: CategoryNameCollectionViewDelegate?
+    var cells = [CategoryNameViewModel(label: "Стены", isActive: true),
+                CategoryNameViewModel(label: "Полы", isActive: false),
+                CategoryNameViewModel(label: "Мебель", isActive: false),
+                CategoryNameViewModel(label: "Декор", isActive: false),
+                CategoryNameViewModel(label: "Ванная", isActive: false)]
 
     init() {
         let layout = UICollectionViewFlowLayout()
@@ -39,13 +46,29 @@ class CategoryNameCollectionView: UICollectionView {
     }
     
     private func setupCollectionSettings() {
+        
         delegate = self
         dataSource = self
         register(CategoryNameCollectionViewCell.self, forCellWithReuseIdentifier: CategoryNameCollectionViewCell.reuseId)
         translatesAutoresizingMaskIntoConstraints = false
         showsHorizontalScrollIndicator = false
         showsVerticalScrollIndicator = false
-        contentInset = UIEdgeInsets(top: 0, left: 20, bottom: 20, right: 20)
+        contentInset = UIEdgeInsets(top: 0, left: 20, bottom: 0, right: 60)
+    }
+    
+    func resetColorLabel() {
+        
+    }
+    
+    func setColor(index: Int) {
+        
+        // hack
+        let lastPageIndex = cells.indices.filter { cells[$0].isActive == true }.first!
+        cells[lastPageIndex].isActive = false
+        cells[index].isActive = true
+        let indexPath = IndexPath(row: index, section: 0)
+        scrollToItem(at: indexPath, at: .centeredHorizontally, animated: true)
+        reloadData()
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -62,10 +85,14 @@ extension CategoryNameCollectionView: UICollectionViewDelegate, UICollectionView
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = dequeueReusableCell(withReuseIdentifier: CategoryNameCollectionViewCell.reuseId, for: indexPath) as! CategoryNameCollectionViewCell
-        cell.set(label: cells[indexPath.row].label)
+        cell.set(viewModel: cells[indexPath.row])
         return cell
     }
     
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        setColor(index: indexPath.row)
+        categoryDelegate?.currentSection(indexPage: indexPath.row)
+    }
 }
 
 // MARK: UICollectionViewDelegateFlowLayout
@@ -76,19 +103,13 @@ extension CategoryNameCollectionView: UICollectionViewDelegateFlowLayout {
                         layout collectionViewLayout: UICollectionViewLayout,
                         sizeForItemAt indexPath: IndexPath) -> CGSize {
     
-        // hack
-        let label = UILabel()
-        label.font = UIFont(name: "TTNorms-Bold", size: 26)
-        label.text = cells[indexPath.row].label
-        
-        return label.intrinsicContentSize
+        return UILabel.getLabelSize(text: cells[indexPath.row].label, fontSize: 26, fontName: "TTNorms-Bold")
     }
     
     func collectionView(_ collectionView: UICollectionView, layout
         collectionViewLayout: UICollectionViewLayout,
                         minimumLineSpacingForSectionAt section: Int) -> CGFloat {
-        return 20.0
+        return 15.0
     }
-    
-}
 
+}

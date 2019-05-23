@@ -13,12 +13,12 @@ enum Main {
   enum Model {
     struct Request {
       enum RequestType {
-        case some
+        case getCurrentPage(page: Int)
       }
     }
     struct Response {
       enum ResponseType {
-        case some
+        case setColorCategoryName(index: Int)
       }
     }
     struct ViewModel {
