@@ -10,9 +10,18 @@ import UIKit
 struct CategoryViewModel {
 }
 
+
+protocol CategoryCollectionViewDelegate: class {
+    func scrollCellTop(_ scrollView: UIScrollView)
+    func scrollCellBegin(_ scrollView: UIScrollView)
+}
+
 class CategoryCollectionView: UICollectionView {
     
     var cells = [CategoryViewModel]()
+    weak var categoryDelegate: CategoryCollectionViewDelegate?
+    
+    
     
     init() {
         let layout = UICollectionViewFlowLayout()
@@ -56,17 +65,25 @@ extension CategoryCollectionView: UICollectionViewDelegate, UICollectionViewData
         return cell
     }
 
-    func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
-        print(#function)
-    }
-    
-    
+
     func scrollViewWillBeginDragging(_ scrollView: UIScrollView) {
-        print(#function)
+        categoryDelegate?.scrollCellBegin(scrollView)
     }
+    
+    func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
+        if scrollView.contentOffset.y < 0 {
+            categoryDelegate?.scrollCellTop(scrollView)
+        }
+    }
+    
+    
+    
+
 }
 
 
+
+// MARK: UICollectionViewDelegateFlowLayout
 extension CategoryCollectionView: UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView,

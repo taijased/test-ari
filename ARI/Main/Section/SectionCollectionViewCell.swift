@@ -10,17 +10,21 @@ import UIKit
 
 
 
+protocol SectionCollectionViewCellDelegate: class {
+    func scrollTop(_ scrollView: UIScrollView)
+    func scrollBegin(_ scrollView: UIScrollView)
+}
 
 class SectionCollectionViewCell: UICollectionViewCell {
     
     static let reuseId = "SectionCollectionViewCell"
     
+    weak var delegate: SectionCollectionViewCellDelegate?
     private var categoryCollectionView = CategoryCollectionView()
     
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-        
         
         setupSubsection()
         set()
@@ -30,7 +34,7 @@ class SectionCollectionViewCell: UICollectionViewCell {
         
         addSubview(categoryCollectionView)
         categoryCollectionView.fillSuperview()
-      
+        categoryCollectionView.categoryDelegate = self
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -41,4 +45,13 @@ class SectionCollectionViewCell: UICollectionViewCell {
     }
 }
 
+extension SectionCollectionViewCell: CategoryCollectionViewDelegate {
+    func scrollCellTop(_ scrollView: UIScrollView) {
+        delegate?.scrollTop(scrollView)
+    }
+    
+    func scrollCellBegin(_ scrollView: UIScrollView) {
+         delegate?.scrollBegin(scrollView)
+    }
+}
 

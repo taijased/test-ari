@@ -27,6 +27,7 @@ class MainViewController: UIViewController, MainDisplayLogic {
             topSaleView.backgroundColor = .clear
         }
     }
+    @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var categoryView: UIView! {
         didSet {
             categoryView.translatesAutoresizingMaskIntoConstraints = false
@@ -65,7 +66,6 @@ class MainViewController: UIViewController, MainDisplayLogic {
         setupCategoryNameCollection()
         setupSectionCollection()
         setupBottomControls()
-        
     }
     
     private func setupCategoryNameCollection() {
@@ -140,6 +140,23 @@ extension MainViewController: BottomControlsDelegate {
 
 
 extension MainViewController: SectionCollectionViewDelegate {
+    func scrollTop(_ scrollView: UIScrollView) {
+        let desiredOffset = CGPoint(x: 0, y: 0)
+        self.scrollView.setContentOffset(desiredOffset, animated: true)
+    }
+    
+    func scrollBegin(_ scrollView: UIScrollView) {
+        
+
+        if scrollView.contentOffset.y < view.frame.height {
+            let desiredOffset = CGPoint(x: 0, y: topSaleCollectionView.frame.height + 20)
+//            print(topSaleCollectionView.frame.height)
+//            print(scrollView.contentOffset)
+//            print(desiredOffset)
+            self.scrollView.setContentOffset(desiredOffset, animated: true)
+        }
+    }
+    
     func currentPage(indexPage: Int) {
         categoryNameCollectionView.setColor(index: indexPage)
 //        interactor?.makeRequest(request: Main.Model.Request.RequestType.getCurrentPage(page: indexPage))
@@ -154,4 +171,3 @@ extension MainViewController: CategoryNameCollectionViewDelegate {
         sectionCollectionView.scrollSection(index: indexPage)
     }
 }
-

@@ -17,6 +17,8 @@ struct SectionViewModel {
 
 protocol SectionCollectionViewDelegate: class {
     func currentPage(indexPage: Int)
+    func scrollTop(_ scrollView: UIScrollView)
+    func scrollBegin(_ scrollView: UIScrollView)
 }
 
 
@@ -24,16 +26,11 @@ class SectionCollectionView: UICollectionView {
     
     var cells = [SectionViewModel]()
     weak var sectionDelegate: SectionCollectionViewDelegate?
-    
-   
-    static var currentPage: Int = 0
-    
     init() {
         let layout = UICollectionViewFlowLayout()
         layout.scrollDirection = .horizontal
         super.init(frame: .zero, collectionViewLayout: layout)
         setupCollectionSettings()
-        
     }
     
     
@@ -72,6 +69,7 @@ extension SectionCollectionView: UICollectionViewDelegate, UICollectionViewDataS
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = dequeueReusableCell(withReuseIdentifier: SectionCollectionViewCell.reuseId, for: indexPath) as! SectionCollectionViewCell
         cell.set()
+        cell.delegate = self
         return cell
     }
     
@@ -85,6 +83,7 @@ extension SectionCollectionView: UICollectionViewDelegate, UICollectionViewDataS
  
 }
 
+// MARK:  UICollectionViewDelegateFlowLayout
 
 extension SectionCollectionView: UICollectionViewDelegateFlowLayout {
     
@@ -107,4 +106,17 @@ extension SectionCollectionView: UICollectionViewDelegateFlowLayout {
         return 0.0
     }
     
+}
+
+
+// MARK:  SectionCollectionViewCellDelegate
+
+extension SectionCollectionView: SectionCollectionViewCellDelegate {
+    func scrollTop(_ scrollView: UIScrollView) {
+        sectionDelegate?.scrollTop(scrollView)
+    }
+    
+    func scrollBegin(_ scrollView: UIScrollView) {
+        sectionDelegate?.scrollBegin(scrollView)
+    }
 }

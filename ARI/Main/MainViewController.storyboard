@@ -80,6 +80,7 @@
                     <connections>
                         <outlet property="categoryNameView" destination="MQJ-qM-AYg" id="J2p-yn-0U1"/>
                         <outlet property="categoryView" destination="oq8-6D-Vs3" id="9Mt-Uo-uvS"/>
+                        <outlet property="scrollView" destination="m5E-rg-vhn" id="e2M-D8-hkW"/>
                         <outlet property="topSaleView" destination="Rt5-Yy-ewK" id="0hf-lF-jJr"/>
                     </connections>
                 </viewController>
