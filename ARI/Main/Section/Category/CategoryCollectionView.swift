@@ -55,16 +55,6 @@ extension CategoryCollectionView: UICollectionViewDelegate, UICollectionViewData
         cell.set(imageUrl: "https://cdn.trinixy.ru/pics5/20170922/grustniy_kot_01.jpg")
         return cell
     }
-    
-    
-//    func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
-//        print(scrollView)
-//    }
-//
-//    func scrollViewDidScrollToTop(_ scrollView: UIScrollView) {
-//        print(#function)
-//    }
-//
 
     func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
         print(#function)
@@ -84,9 +74,10 @@ extension CategoryCollectionView: UICollectionViewDelegateFlowLayout {
                         sizeForItemAt indexPath: IndexPath) -> CGSize {
         
         
-        
-        
-        return CGSize(width: 150, height: 150)
+        let width = (self.frame.width - 50) * 0.5
+        let height = width * 0.62
+
+        return CGSize(width: width, height: height)
     }
     
     func collectionView(_ collectionView: UICollectionView,
@@ -98,7 +89,7 @@ extension CategoryCollectionView: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout
         collectionViewLayout: UICollectionViewLayout,
                         minimumLineSpacingForSectionAt section: Int) -> CGFloat {
-        return 10.0
+        return 40.0
     }
     
 }

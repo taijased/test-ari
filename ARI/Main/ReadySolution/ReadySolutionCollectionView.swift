@@ -16,8 +16,8 @@ struct ReadySolutionViewModel {
 
 class ReadySolutionCollectionView: UICollectionView {
     
-    var cells = [ReadySolutionViewModel(iconUrlString: "https://kor.ill.in.ua/m/610x385/1804612.jpg", name: "Кухня в стиле Flat"),
-                ReadySolutionViewModel(iconUrlString: "https://kor.ill.in.ua/m/610x385/1804612.jpg", name: "Минималистичный зал"),
+    var cells = [ReadySolutionViewModel(iconUrlString: "https://st.hzcdn.com/simgs/37c1030204f895c9_4-2281/home-design.jpg", name: "Кухня в стиле Flat"),
+                ReadySolutionViewModel(iconUrlString: "https://avatars.mds.yandex.net/get-pdb/467185/d48e0613-58d7-4646-9eb3-e33a848ee5e8/orig", name: "Минималистичный зал"),
                 ReadySolutionViewModel(iconUrlString: "https://kor.ill.in.ua/m/610x385/1804612.jpg", name: "Уютная спальня"),
                 ReadySolutionViewModel(iconUrlString: "https://kor.ill.in.ua/m/610x385/1804612.jpg", name: "Светлая ванная")]
     
