@@ -11,6 +11,7 @@ import UIKit
 class ReadySolutionCollectionViewCell: UICollectionViewCell {
     
     static let reuseId = "ReadySolutionCollectionViewCell"
+    var gradientLayer: CAGradientLayer?
     
     let myImageView: WebImageView = {
         let imageView = WebImageView()
@@ -20,20 +21,69 @@ class ReadySolutionCollectionViewCell: UICollectionViewCell {
         return imageView
     }()
     
+    let viewLabelMask: UIView = {
+        let view = UIView()
+        view.translatesAutoresizingMaskIntoConstraints = false
+        return view
+    }()
+    
+    let label: UILabel = {
+        let label = UILabel()
+        label.translatesAutoresizingMaskIntoConstraints = false
+        label.textColor = UIColor(red: 1, green: 1, blue: 1, alpha: 1)
+        label.font = UIFont(name: "TTNorms-Medium", size: 12)
+        
+        return label
+    }()
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
-        
+        setupLayers()
+    }
+    
+    
+    
+    func set(viewModel: ReadySolutionViewModel) {
+        myImageView.set(imageURL: viewModel.iconUrlString)
+        label.text = viewModel.name
+    }
+    
+    private func setupLayers() {
+        // first layer
         addSubview(myImageView)
         // myImageView constraints
         myImageView.fillSuperview()
+        
+        // second layer
+        myImageView.addSubview(viewLabelMask)
+        viewLabelMask.bottomAnchor.constraint(equalTo: myImageView.bottomAnchor).isActive = true
+        viewLabelMask.leadingAnchor.constraint(equalTo: myImageView.leadingAnchor).isActive = true
+        viewLabelMask.trailingAnchor.constraint(equalTo: myImageView.trailingAnchor).isActive = true
+        viewLabelMask.heightAnchor.constraint(equalToConstant: 42).isActive = true
+        // thrid layer
+    
+        // add gradient
+        let gradientLayer = CAGradientLayer()
+        gradientLayer.colors = [UIColor(red: 0, green: 0, blue: 0, alpha: 0).cgColor,
+                                UIColor(red: 0, green: 0, blue: 0, alpha: 0.5).cgColor]
+
+        gradientLayer.locations = [0.0, 0.3]
+        gradientLayer.frame = bounds
+        viewLabelMask.layer.insertSublayer(gradientLayer, at: 0)
+
+        viewLabelMask.addSubview(label)
+        label.centerXAnchor.constraint(equalTo: viewLabelMask.centerXAnchor).isActive = true
+        label.centerYAnchor.constraint(equalTo: viewLabelMask.centerYAnchor).isActive = true
+        label.leadingAnchor.constraint(equalTo: viewLabelMask.leadingAnchor, constant: 12).isActive = true
+        label.trailingAnchor.constraint(equalTo: viewLabelMask.trailingAnchor).isActive = true
+    
     }
+    
+    
+
     
     override func prepareForReuse() {
         myImageView.image = nil
-    }
-    
-    func set(imageUrl: String?) {
-        myImageView.set(imageURL: imageUrl)
     }
     
     override func layoutSubviews() {
@@ -43,9 +93,42 @@ class ReadySolutionCollectionViewCell: UICollectionViewCell {
         self.layer.shadowRadius = 3
         layer.shadowOpacity = 0.4
         layer.shadowOffset = CGSize(width: 2.5, height: 4)
+        
+    }
+    func addGradientToView(view: UIView)
+    {
+        //gradient layer
+        let gradientLayer = CAGradientLayer()
+        
+        //define colors
+        gradientLayer.colors = [UIColor.red.cgColor,    UIColor.green.cgColor, UIColor.blue.cgColor]
+        
+        //define locations of colors as NSNumbers in range from 0.0 to 1.0
+        //if locations not provided the colors will spread evenly
+        gradientLayer.locations = [0.0, 0.6, 0.8]
+        
+        //define frame
+        gradientLayer.frame = view.bounds
+        
+        //insert the gradient layer to the view layer
+        view.layer.insertSublayer(gradientLayer, at: 0)
     }
     
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+}
+
+extension UIView
+{
+    func gradient(colors: [CGColor], startPoint: CGPoint, endPoint: CGPoint, opacity: Float, location: [NSNumber]?) {
+        let gradientLayer = CAGradientLayer()
+        gradientLayer.frame = bounds
+        gradientLayer.colors = colors
+        gradientLayer.startPoint = startPoint
+        gradientLayer.endPoint = endPoint
+        gradientLayer.opacity = opacity
+        gradientLayer.locations = location
+        layer.addSublayer(gradientLayer)
     }
 }

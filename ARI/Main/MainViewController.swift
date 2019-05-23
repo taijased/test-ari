@@ -35,7 +35,7 @@ class MainViewController: UIViewController, MainDisplayLogic {
     
     @IBOutlet weak var categoryNameView: UIView! {
         didSet {
-//            categoryNameView.backgroundColor = .clear
+            categoryNameView.backgroundColor = .clear
         }
     }
     // MARK: Setup
@@ -59,13 +59,13 @@ class MainViewController: UIViewController, MainDisplayLogic {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        print(view.frame)
         setup()
         
         setupTopSaleCollection()
         setupCategoryNameCollection()
         setupSectionCollection()
         setupBottomControls()
+        
     }
     
     private func setupCategoryNameCollection() {
@@ -154,3 +154,4 @@ extension MainViewController: CategoryNameCollectionViewDelegate {
         sectionCollectionView.scrollSection(index: indexPage)
     }
 }
+

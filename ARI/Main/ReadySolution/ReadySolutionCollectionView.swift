@@ -10,12 +10,16 @@ import UIKit
 
 
 struct ReadySolutionViewModel {
-    
+    var iconUrlString: String
+    var name: String
 }
 
 class ReadySolutionCollectionView: UICollectionView {
     
-    var cells = [ReadySolutionViewModel]()
+    var cells = [ReadySolutionViewModel(iconUrlString: "https://kor.ill.in.ua/m/610x385/1804612.jpg", name: "Кухня в стиле Flat"),
+                ReadySolutionViewModel(iconUrlString: "https://kor.ill.in.ua/m/610x385/1804612.jpg", name: "Минималистичный зал"),
+                ReadySolutionViewModel(iconUrlString: "https://kor.ill.in.ua/m/610x385/1804612.jpg", name: "Уютная спальня"),
+                ReadySolutionViewModel(iconUrlString: "https://kor.ill.in.ua/m/610x385/1804612.jpg", name: "Светлая ванная")]
     
     init() {
         let layout = UICollectionViewFlowLayout()
@@ -51,12 +55,12 @@ class ReadySolutionCollectionView: UICollectionView {
 extension ReadySolutionCollectionView: UICollectionViewDelegate, UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return Int.random(in: 4..<9)
+        return cells.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = dequeueReusableCell(withReuseIdentifier: ReadySolutionCollectionViewCell.reuseId, for: indexPath) as! ReadySolutionCollectionViewCell
-        cell.set(imageUrl: "https://kor.ill.in.ua/m/610x385/1804612.jpg")
+        cell.set(viewModel: cells[indexPath.row])
         return cell
     }
     
