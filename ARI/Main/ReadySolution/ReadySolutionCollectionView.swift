@@ -16,10 +16,16 @@ struct ReadySolutionViewModel {
 
 class ReadySolutionCollectionView: UICollectionView {
     
+    let itemCellSize = CGSize(width: 250, height: 160)
+    let itemCellsGap: CGFloat = 20.0
+    
     var cells = [ReadySolutionViewModel(iconUrlString: "https://st.hzcdn.com/simgs/37c1030204f895c9_4-2281/home-design.jpg", name: "Кухня в стиле Flat"),
-                ReadySolutionViewModel(iconUrlString: "https://avatars.mds.yandex.net/get-pdb/467185/d48e0613-58d7-4646-9eb3-e33a848ee5e8/orig", name: "Минималистичный зал"),
-                ReadySolutionViewModel(iconUrlString: "https://kor.ill.in.ua/m/610x385/1804612.jpg", name: "Уютная спальня"),
-                ReadySolutionViewModel(iconUrlString: "https://kor.ill.in.ua/m/610x385/1804612.jpg", name: "Светлая ванная")]
+                 ReadySolutionViewModel(iconUrlString: "https://avatars.mds.yandex.net/get-pdb/467185/d48e0613-58d7-4646-9eb3-e33a848ee5e8/orig", name: "Минималистичный зал"),
+                 ReadySolutionViewModel(iconUrlString: "https://kor.ill.in.ua/m/610x385/1804612.jpg", name: "Уютная спальня"),
+                 ReadySolutionViewModel(iconUrlString: "https://kor.ill.in.ua/m/610x385/1804612.jpg", name: "Светлая ванная"),
+                 ReadySolutionViewModel(iconUrlString: "https://avatars.mds.yandex.net/get-pdb/467185/d48e0613-58d7-4646-9eb3-e33a848ee5e8/orig", name: "Минималистичный зал"),
+                 ReadySolutionViewModel(iconUrlString: "https://kor.ill.in.ua/m/610x385/1804612.jpg", name: "Уютная спальня"),
+                 ReadySolutionViewModel(iconUrlString: "https://kor.ill.in.ua/m/610x385/1804612.jpg", name: "Светлая ванная")]
     
     init() {
         let layout = UICollectionViewFlowLayout()
@@ -45,6 +51,8 @@ class ReadySolutionCollectionView: UICollectionView {
         showsVerticalScrollIndicator = false
         contentInset = UIEdgeInsets(top: 0, left: 20, bottom: 20, right: 20)
         isPagingEnabled = true
+        decelerationRate = .fast
+        
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -65,6 +73,23 @@ extension ReadySolutionCollectionView: UICollectionViewDelegate, UICollectionVie
         return cell
     }
     
+
+    
+    
+    func scrollViewWillEndDragging(_ scrollView: UIScrollView, withVelocity velocity: CGPoint, targetContentOffset: UnsafeMutablePointer<CGPoint>) {
+        targetContentOffset.pointee = scrollView.contentOffset
+        var indexes = indexPathsForVisibleItems
+        indexes.sort()
+        var index = indexes.first!
+        let cell = cellForItem(at: index)!
+        let position = contentOffset.x - cell.frame.origin.x
+        if position > cell.frame.size.width / 2 {
+            index.row = index.row + 1
+        }
+        scrollToItem(at: index, at: .left, animated: true )
+    }
+    
+    
 }
 
 // MARK: UICollectionViewDelegateFlowLayout
@@ -75,19 +100,19 @@ extension ReadySolutionCollectionView: UICollectionViewDelegateFlowLayout {
                         layout collectionViewLayout: UICollectionViewLayout,
                         sizeForItemAt indexPath: IndexPath) -> CGSize {
         
-        return CGSize(width: 160*1.6, height: 160)
+        return itemCellSize
     }
     
     func collectionView(_ collectionView: UICollectionView,
                         layout collectionViewLayout: UICollectionViewLayout,
                         minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
-        return 20.0
+        return itemCellsGap
     }
     
     func collectionView(_ collectionView: UICollectionView, layout
         collectionViewLayout: UICollectionViewLayout,
                         minimumLineSpacingForSectionAt section: Int) -> CGFloat {
-        return 20.0
+        return itemCellsGap
     }
     
 }

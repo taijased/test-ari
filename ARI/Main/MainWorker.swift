@@ -10,4 +10,11 @@ import UIKit
 
 class MainService {
 
+    func getSegueName(buttonName: String) -> String? {
+        switch buttonName {
+        case "plus": return "selfToARSceneSegueName"
+        default:
+            return nil
+        }
+    }
 }

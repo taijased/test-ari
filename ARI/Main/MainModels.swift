@@ -14,18 +14,22 @@ enum Main {
     struct Request {
       enum RequestType {
         case getCurrentPage(page: Int)
+        case tappedBottomControls(buttonName: String)
       }
     }
     struct Response {
       enum ResponseType {
         case setColorCategoryName(index: Int)
+        case setSelfToSegue(segueName: String)
       }
     }
     struct ViewModel {
       enum ViewModelData {
-        case some
+        case displayARScene(segueName: String)
       }
     }
   }
   
 }
+
+

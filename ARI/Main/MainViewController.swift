@@ -125,7 +125,11 @@ class MainViewController: UIViewController, MainDisplayLogic {
     
     
     func displayData(viewModel: Main.Model.ViewModel.ViewModelData) {
-        
+        switch viewModel {
+       
+        case .displayARScene(let segueName):
+            router?.goToSegue(selfToSegue: segueName)
+        }
     }
     
 }
@@ -135,12 +139,7 @@ class MainViewController: UIViewController, MainDisplayLogic {
 
 extension MainViewController: BottomControlsDelegate {
     func bottomControlActions(buttonName: String) {
-        switch buttonName {
-        case "settings": print(buttonName)
-        case "search": print(buttonName)
-        case "account": print(buttonName)
-        default: break
-        }
+        interactor?.makeRequest(request: Main.Model.Request.RequestType.tappedBottomControls(buttonName: buttonName))
     }
     
 }

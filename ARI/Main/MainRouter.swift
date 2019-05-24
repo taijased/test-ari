@@ -9,13 +9,22 @@
 import UIKit
 
 protocol MainRoutingLogic {
-
+    func goToSegue(selfToSegue: String)
 }
 
 class MainRouter: NSObject, MainRoutingLogic {
 
-  weak var viewController: MainViewController?
-  
-  // MARK: Routing
-  
+
+    weak var viewController: MainViewController?
+    
+    // MARK: Routing
+    
+    func goToSegue(selfToSegue: String) {
+        
+        viewController?.performSegue(withIdentifier: selfToSegue, sender: nil)
+    }
+    
+    func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        // prepare here some data for destination viewController
+    }
 }

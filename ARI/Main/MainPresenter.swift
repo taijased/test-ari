@@ -19,7 +19,10 @@ class MainPresenter: MainPresentationLogic {
         switch response {
             
         case .setColorCategoryName(let index):
-            break
+            print(#function)
+    
+        case .setSelfToSegue(let segueName):
+            viewController?.displayData(viewModel: Main.Model.ViewModel.ViewModelData.displayARScene(segueName: segueName))
         }
     }
 }

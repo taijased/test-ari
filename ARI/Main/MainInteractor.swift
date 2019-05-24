@@ -24,7 +24,12 @@ class MainInteractor: MainBusinessLogic {
         switch request {
         case .getCurrentPage(let page):
             presenter?.presentData(response: Main.Model.Response.ResponseType.setColorCategoryName(index: page))
+            
+        case .tappedBottomControls(let buttonName):
+            guard let segueName = service?.getSegueName(buttonName: buttonName) else { return }
+            presenter?.presentData(response: Main.Model.Response.ResponseType.setSelfToSegue(segueName: segueName))
         }
-      
     }
+    
+    
 }
