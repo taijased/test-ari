@@ -90,7 +90,7 @@ class ReadySolutionCollectionViewCell: UICollectionViewCell {
         super.layoutSubviews()
         myImageView.layer.masksToBounds = true
         myImageView.layer.cornerRadius = 10
-        layer.shadowRadius = 10
+        layer.shadowRadius = 7
         layer.shadowColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.2).cgColor
         layer.shadowOpacity = 1
         layer.shadowOffset = CGSize(width: 0, height: 2)

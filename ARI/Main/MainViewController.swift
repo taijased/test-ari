@@ -34,11 +34,15 @@ class MainViewController: UIViewController, MainDisplayLogic {
         }
     }
     
-    @IBOutlet weak var categoryNameView: UIView! {
-        didSet {
-            categoryNameView.backgroundColor = .clear
-        }
-    }
+
+    
+    let sectionHeader: UIView = {
+        let view = UIView()
+        view.translatesAutoresizingMaskIntoConstraints = false
+        view.backgroundColor = .clear
+        return view
+    }()
+    
     // MARK: Setup
     private func setup() {
         let viewController        = self
@@ -63,17 +67,29 @@ class MainViewController: UIViewController, MainDisplayLogic {
         setup()
         
         setupTopSaleCollection()
-        setupCategoryNameCollection()
         setupSectionCollection()
+        setupCategoryNameCollection()
         setupBottomControls()
+        
     }
     
     private func setupCategoryNameCollection() {
-
-//        categoryNameView.frame.size.height = UILabel.getLabelSize(text: "temp", fontSize: 26, fontName: "TTNorms-Bold").height
-        categoryNameView.addSubview(categoryNameCollectionView)
+        
+        categoryView.addSubview(sectionHeader)
+        sectionHeader.topAnchor.constraint(equalTo: categoryView.topAnchor).isActive = true
+        sectionHeader.trailingAnchor.constraint(equalTo: categoryView.trailingAnchor).isActive = true
+        sectionHeader.leadingAnchor.constraint(equalTo: categoryView.leadingAnchor).isActive = true
+        sectionHeader.heightAnchor.constraint(equalToConstant: 50).isActive = true
+        sectionHeader.addSubview(categoryNameCollectionView)
         categoryNameCollectionView.fillSuperview()
         categoryNameCollectionView.categoryDelegate = self
+
+        let gradient = CAGradientLayer()
+        gradient.colors = [UIColor(red: 1, green: 1, blue: 1, alpha: 1).cgColor,
+                           UIColor(red: 1, green: 1, blue: 1, alpha: 0).cgColor]  // your colors go here
+        gradient.locations = [0.6, 1]
+        gradient.frame = CGRect(x: 0, y: 0, width: view.frame.width + 10, height: 70)
+        sectionHeader.layer.insertSublayer(gradient, at: 0)
     }
     
     private func setupTopSaleCollection() {
@@ -82,7 +98,6 @@ class MainViewController: UIViewController, MainDisplayLogic {
         topSaleCollectionView.trailingAnchor.constraint(equalTo: topSaleView.trailingAnchor).isActive = true
         topSaleCollectionView.leadingAnchor.constraint(equalTo: topSaleView.leadingAnchor).isActive = true
         topSaleCollectionView.bottomAnchor.constraint(equalTo: topSaleView.bottomAnchor,  constant: 20).isActive = true
-        
     }
     
     private func setupSectionCollection() {
@@ -91,11 +106,6 @@ class MainViewController: UIViewController, MainDisplayLogic {
         
         categoryView.addSubview(sectionCollectionView)
         sectionCollectionView.fillSuperview()
-        //        sectionCollectionView.topAnchor.constraint(equalTo: view.topAnchor, constant: topSaleView.frame.height).isActive = true
-        //        sectionCollectionView.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
-        //        sectionCollectionView.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
-        //        sectionCollectionView.bottomAnchor.constraint(equalTo: view.bottomAnchor,  constant: 20).isActive = true
-        
         sectionCollectionView.sectionDelegate = self
         
     }
@@ -142,6 +152,9 @@ extension MainViewController: BottomControlsDelegate {
 extension MainViewController: SectionCollectionViewDelegate {
     func scrollTop(_ scrollView: UIScrollView) {
         let desiredOffset = CGPoint(x: 0, y: 0)
+        
+        self.topSaleView.isHidden = false
+
         self.scrollView.setContentOffset(desiredOffset, animated: true)
     }
     
@@ -150,10 +163,11 @@ extension MainViewController: SectionCollectionViewDelegate {
 
         if scrollView.contentOffset.y < view.frame.height {
             let desiredOffset = CGPoint(x: 0, y: topSaleCollectionView.frame.height + 20)
-//            print(topSaleCollectionView.frame.height)
-//            print(scrollView.contentOffset)
-//            print(desiredOffset)
+            self.topSaleView.isHidden = true
+            
             self.scrollView.setContentOffset(desiredOffset, animated: true)
+            
+            
         }
     }
     

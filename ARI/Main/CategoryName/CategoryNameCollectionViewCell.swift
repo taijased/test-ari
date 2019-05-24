@@ -30,7 +30,7 @@ class CategoryNameCollectionViewCell: UICollectionViewCell {
         addSubview(label)
         // myImageView constraints
         label.fillSuperview()
-
+        backgroundColor = .clear
     }
     
     

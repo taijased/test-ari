@@ -42,16 +42,11 @@
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oq8-6D-Vs3">
-                                        <rect key="frame" x="20" y="320" width="414" height="600"/>
+                                        <rect key="frame" x="20" y="268" width="414" height="652"/>
                                         <color key="backgroundColor" red="0.40000000000000002" green="0.75686274509999996" blue="0.36078431370000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="600" id="eJO-QO-by7"/>
+                                            <constraint firstAttribute="height" constant="652" id="eJO-QO-by7"/>
                                         </constraints>
-                                    </view>
-                                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="MQJ-qM-AYg">
-                                        <rect key="frame" x="20" y="268" width="414" height="52"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <color key="backgroundColor" name="findHighlightColor" catalog="System" colorSpace="catalog"/>
                                     </view>
                                 </subviews>
                                 <constraints>
@@ -60,7 +55,7 @@
                                     <constraint firstAttribute="bottom" secondItem="oq8-6D-Vs3" secondAttribute="bottom" constant="20" id="Vev-PR-kvU"/>
                                     <constraint firstAttribute="trailing" secondItem="Rt5-Yy-ewK" secondAttribute="trailing" constant="20" id="Wso-oF-KoR"/>
                                     <constraint firstItem="Rt5-Yy-ewK" firstAttribute="leading" secondItem="m5E-rg-vhn" secondAttribute="leading" constant="20" id="cBE-vu-L4f"/>
-                                    <constraint firstItem="oq8-6D-Vs3" firstAttribute="top" secondItem="m5E-rg-vhn" secondAttribute="top" constant="320" id="fX5-aS-b23"/>
+                                    <constraint firstItem="oq8-6D-Vs3" firstAttribute="top" secondItem="m5E-rg-vhn" secondAttribute="top" constant="268" id="fX5-aS-b23"/>
                                     <constraint firstItem="Rt5-Yy-ewK" firstAttribute="trailing" secondItem="oq8-6D-Vs3" secondAttribute="trailing" id="ijc-2T-Ctk"/>
                                     <constraint firstItem="Rt5-Yy-ewK" firstAttribute="centerX" secondItem="m5E-rg-vhn" secondAttribute="centerX" id="sab-7K-mRy"/>
                                 </constraints>
@@ -77,7 +72,6 @@
                     </view>
                     <size key="freeformSize" width="414" height="900"/>
                     <connections>
-                        <outlet property="categoryNameView" destination="MQJ-qM-AYg" id="J2p-yn-0U1"/>
                         <outlet property="categoryView" destination="oq8-6D-Vs3" id="9Mt-Uo-uvS"/>
                         <outlet property="scrollView" destination="m5E-rg-vhn" id="e2M-D8-hkW"/>
                         <outlet property="topSaleView" destination="Rt5-Yy-ewK" id="0hf-lF-jJr"/>

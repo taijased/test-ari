@@ -34,8 +34,8 @@ class CategoryNameCollectionView: UICollectionView {
         let layout = UICollectionViewFlowLayout()
         layout.scrollDirection = .horizontal
         super.init(frame: .zero, collectionViewLayout: layout)
-        backgroundColor = .clear
         setupCollectionSettings()
+        backgroundColor = .clear
     }
     
     

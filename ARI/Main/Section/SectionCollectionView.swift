@@ -27,11 +27,13 @@ class SectionCollectionView: UICollectionView {
     var cells = [SectionViewModel]()
     weak var sectionDelegate: SectionCollectionViewDelegate?
     
+    
     init() {
         let layout = UICollectionViewFlowLayout()
         layout.scrollDirection = .horizontal
         super.init(frame: .zero, collectionViewLayout: layout)
         setupCollectionSettings()
+        backgroundColor = .white
     }
     func set(cells: [SectionViewModel]) {
         self.cells = cells
@@ -51,6 +53,7 @@ class SectionCollectionView: UICollectionView {
         showsVerticalScrollIndicator = false
         isPagingEnabled = true
 
+       
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -79,7 +82,6 @@ extension SectionCollectionView: UICollectionViewDelegate, UICollectionViewDataS
         
         sectionDelegate?.currentPage(indexPage: page)
     }
-
  
 }
 
