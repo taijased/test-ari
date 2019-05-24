@@ -36,7 +36,6 @@ class CategoryNameCollectionView: UICollectionView {
         super.init(frame: .zero, collectionViewLayout: layout)
         backgroundColor = .clear
         setupCollectionSettings()
-        
     }
     
     

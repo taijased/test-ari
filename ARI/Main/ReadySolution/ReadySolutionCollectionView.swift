@@ -44,6 +44,7 @@ class ReadySolutionCollectionView: UICollectionView {
         showsHorizontalScrollIndicator = false
         showsVerticalScrollIndicator = false
         contentInset = UIEdgeInsets(top: 0, left: 20, bottom: 20, right: 20)
+        isPagingEnabled = true
     }
     
     required init?(coder aDecoder: NSCoder) {

@@ -90,45 +90,14 @@ class ReadySolutionCollectionViewCell: UICollectionViewCell {
         super.layoutSubviews()
         myImageView.layer.masksToBounds = true
         myImageView.layer.cornerRadius = 10
-        self.layer.shadowRadius = 3
-        layer.shadowOpacity = 0.4
-        layer.shadowOffset = CGSize(width: 2.5, height: 4)
+        layer.shadowRadius = 10
+        layer.shadowColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.2).cgColor
+        layer.shadowOpacity = 1
+        layer.shadowOffset = CGSize(width: 0, height: 2)
         
-    }
-    func addGradientToView(view: UIView)
-    {
-        //gradient layer
-        let gradientLayer = CAGradientLayer()
-        
-        //define colors
-        gradientLayer.colors = [UIColor.red.cgColor,    UIColor.green.cgColor, UIColor.blue.cgColor]
-        
-        //define locations of colors as NSNumbers in range from 0.0 to 1.0
-        //if locations not provided the colors will spread evenly
-        gradientLayer.locations = [0.0, 0.6, 0.8]
-        
-        //define frame
-        gradientLayer.frame = view.bounds
-        
-        //insert the gradient layer to the view layer
-        view.layer.insertSublayer(gradientLayer, at: 0)
     }
     
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
-    }
-}
-
-extension UIView
-{
-    func gradient(colors: [CGColor], startPoint: CGPoint, endPoint: CGPoint, opacity: Float, location: [NSNumber]?) {
-        let gradientLayer = CAGradientLayer()
-        gradientLayer.frame = bounds
-        gradientLayer.colors = colors
-        gradientLayer.startPoint = startPoint
-        gradientLayer.endPoint = endPoint
-        gradientLayer.opacity = opacity
-        gradientLayer.locations = location
-        layer.addSublayer(gradientLayer)
     }
 }

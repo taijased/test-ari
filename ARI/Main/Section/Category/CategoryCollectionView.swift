@@ -44,7 +44,7 @@ class CategoryCollectionView: UICollectionView {
         translatesAutoresizingMaskIntoConstraints = false
         showsHorizontalScrollIndicator = false
         showsVerticalScrollIndicator = false
-        contentInset = UIEdgeInsets(top: 10, left: 20, bottom: 50, right: 20)
+        contentInset = UIEdgeInsets(top: 10, left: 20, bottom: 150, right: 20)
     }
     
     required init?(coder aDecoder: NSCoder) {

@@ -17,10 +17,14 @@ class CategoryCollectionViewCell: UICollectionViewCell {
         let view = UIView()
         view.backgroundColor = #colorLiteral(red: 0.9999960065, green: 1, blue: 1, alpha: 1)
         view.translatesAutoresizingMaskIntoConstraints = false
-        view.layer.shadowRadius = 3
-        view.layer.shadowOpacity = 0.4
-        view.layer.shadowOffset = CGSize(width: 2.5, height: 4)
+        
+        view.layer.shadowRadius = 7
+        view.layer.shadowOpacity = 1
+        view.layer.shadowOffset = CGSize(width: 0, height: 2)
         view.layer.cornerRadius = 10
+        view.layer.position = view.center
+        view.layer.shadowColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.2).cgColor
+        
         return view
     }()
     
