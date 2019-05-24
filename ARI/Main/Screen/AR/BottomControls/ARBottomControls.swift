@@ -13,25 +13,23 @@ import UIKit
 
 
 protocol ARBottomControlsDelegate: class {
-    func bottomControlActions(buttonName: String)
+    func doneTapped()
+    func plusTapped()
+    func undoTapped()
+    func backTapped()
 }
 
 class ARBottomControls: UIView {
     
     weak var delegate: ARBottomControlsDelegate?
     
-    let accountButton: UIButton = {
-        var button = UIButton.getCustomtButton(imageName: "account")
-        button.addTarget(self, action: #selector(settingsTapped), for: .touchUpInside)
+    let doneButton: UIButton = {
+        var button = UIButton.getCustomtButton(imageName: "done")
+        button.addTarget(self, action: #selector(doneTapped), for: .touchUpInside)
+        button.backgroundColor = UIColor(hexValue: "#4AB56D", alpha: 1)
         return button
     }()
     
-    
-    let searchButton: UIButton = {
-        let button = UIButton.getCustomtButton(imageName: "search")
-        button.addTarget(self, action: #selector(searchTapped), for: .touchUpInside)
-        return button
-    }()
     
     let plusButton: UIButton = {
         let button = UIButton.getCustomtButton(imageName: "plus")
@@ -39,7 +37,19 @@ class ARBottomControls: UIView {
         return button
     }()
     
+    let undoButton: UIButton = {
+        let button = UIButton.getCustomtButton(imageName: "undo")
+        button.addTarget(self, action: #selector(undoTapped), for: .touchUpInside)
+        button.backgroundColor = UIColor(hexValue: "#4A90E2", alpha: 1)
+        button.isHidden = true
+        return button
+    }()
     
+    let backButton: UIButton = {
+        let button = UIButton.getCustomtButton(imageName: "arrow-left")
+        button.addTarget(self, action: #selector(backTapped), for: .touchUpInside)
+        return button
+    }()
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -48,19 +58,25 @@ class ARBottomControls: UIView {
         setupUI()
     }
     
-    @objc func settingsTapped(_ sender: UIButton) {
+    @objc func doneTapped(_ sender: UIButton) {
         sender.flash()
-        delegate?.bottomControlActions(buttonName: "account")
-    }
-    
-    @objc func searchTapped(_ sender: UIButton) {
-        sender.flash()
-        delegate?.bottomControlActions(buttonName: "search")
+        delegate?.doneTapped()
     }
     
     @objc func plusTapped(_ sender: UIButton) {
         sender.flash()
-        delegate?.bottomControlActions(buttonName: "plus")
+        undoButton.isHidden = false
+        delegate?.plusTapped()
+    }
+    
+    @objc func undoTapped(_ sender: UIButton) {
+        sender.flash()
+        delegate?.undoTapped()
+    }
+    
+    @objc func backTapped(_ sender: UIButton) {
+        sender.flash()
+        delegate?.backTapped()
     }
     
     private func setupUI() {
@@ -68,23 +84,30 @@ class ARBottomControls: UIView {
     }
     
     private func overlayFirstLayer() {
-        addSubview(accountButton)
-        accountButton.topAnchor.constraint(equalTo: topAnchor).isActive = true
-        accountButton.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -10).isActive = true
-        accountButton.widthAnchor.constraint(equalToConstant: 50).isActive = true
-        accountButton.heightAnchor.constraint(equalToConstant: 50).isActive = true
-        
-        addSubview(searchButton)
-        searchButton.topAnchor.constraint(equalTo: topAnchor).isActive = true
-        searchButton.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -70).isActive = true
-        searchButton.widthAnchor.constraint(equalToConstant: 50).isActive = true
-        searchButton.heightAnchor.constraint(equalToConstant: 50).isActive = true
+        addSubview(doneButton)
+        doneButton.topAnchor.constraint(equalTo: topAnchor).isActive = true
+        doneButton.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -10).isActive = true
+        doneButton.widthAnchor.constraint(equalToConstant: 50).isActive = true
+        doneButton.heightAnchor.constraint(equalToConstant: 50).isActive = true
         
         addSubview(plusButton)
         plusButton.topAnchor.constraint(equalTo: topAnchor).isActive = true
-        plusButton.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 10).isActive = true
+        plusButton.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -70).isActive = true
         plusButton.widthAnchor.constraint(equalToConstant: 50).isActive = true
         plusButton.heightAnchor.constraint(equalToConstant: 50).isActive = true
+        
+        addSubview(undoButton)
+        undoButton.topAnchor.constraint(equalTo: topAnchor).isActive = true
+        undoButton.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -130).isActive = true
+        undoButton.widthAnchor.constraint(equalToConstant: 50).isActive = true
+        undoButton.heightAnchor.constraint(equalToConstant: 50).isActive = true
+        
+        addSubview(backButton)
+        backButton.topAnchor.constraint(equalTo: topAnchor).isActive = true
+        backButton.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 10).isActive = true
+        backButton.widthAnchor.constraint(equalToConstant: 50).isActive = true
+        backButton.heightAnchor.constraint(equalToConstant: 50).isActive = true
+  
         
     }
     
