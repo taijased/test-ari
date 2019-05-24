@@ -9,6 +9,10 @@
 /* Begin PBXBuildFile section */
 		8A00693922983FEB0070FF4C /* ARViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A00693822983FEB0070FF4C /* ARViewController.swift */; };
 		8A00693C229842830070FF4C /* ARBottomControls.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A00693B229842830070FF4C /* ARBottomControls.swift */; };
+		8A006941229852B10070FF4C /* CatalogTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A006940229852B10070FF4C /* CatalogTableView.swift */; };
+		8A00694A2298549C0070FF4C /* CatalogTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A0069492298549C0070FF4C /* CatalogTableViewCell.swift */; };
+		8A00694C229854C10070FF4C /* CatalogViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A00694B229854C10070FF4C /* CatalogViewController.swift */; };
+		8A006950229855360070FF4C /* CatalogViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8A00694F229855360070FF4C /* CatalogViewController.xib */; };
 		8A72B8E822944BF600FD5F22 /* ReadySolutionCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A72B8E722944BF600FD5F22 /* ReadySolutionCollectionView.swift */; };
 		8A72B8EA22944C0A00FD5F22 /* ReadySolutionCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A72B8E922944C0A00FD5F22 /* ReadySolutionCollectionViewCell.swift */; };
 		8A72B8EE229451AD00FD5F22 /* SectionCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A72B8ED229451AD00FD5F22 /* SectionCollectionView.swift */; };
@@ -59,6 +63,10 @@
 		836582DCBAF04FF08A1AB33A /* Pods-ARI.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ARI.release.xcconfig"; path = "Target Support Files/Pods-ARI/Pods-ARI.release.xcconfig"; sourceTree = "<group>"; };
 		8A00693822983FEB0070FF4C /* ARViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARViewController.swift; sourceTree = "<group>"; };
 		8A00693B229842830070FF4C /* ARBottomControls.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARBottomControls.swift; sourceTree = "<group>"; };
+		8A006940229852B10070FF4C /* CatalogTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatalogTableView.swift; sourceTree = "<group>"; };
+		8A0069492298549C0070FF4C /* CatalogTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatalogTableViewCell.swift; sourceTree = "<group>"; };
+		8A00694B229854C10070FF4C /* CatalogViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatalogViewController.swift; sourceTree = "<group>"; };
+		8A00694F229855360070FF4C /* CatalogViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CatalogViewController.xib; sourceTree = "<group>"; };
 		8A72B8E722944BF600FD5F22 /* ReadySolutionCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReadySolutionCollectionView.swift; sourceTree = "<group>"; };
 		8A72B8E922944C0A00FD5F22 /* ReadySolutionCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReadySolutionCollectionViewCell.swift; sourceTree = "<group>"; };
 		8A72B8ED229451AD00FD5F22 /* SectionCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionCollectionView.swift; sourceTree = "<group>"; };
@@ -139,6 +147,7 @@
 			isa = PBXGroup;
 			children = (
 				8A00693A229842450070FF4C /* BottomControls */,
+				8A00693E229850F80070FF4C /* Catalog */,
 				8A00693822983FEB0070FF4C /* ARViewController.swift */,
 			);
 			path = AR;
@@ -150,6 +159,25 @@
 				8A00693B229842830070FF4C /* ARBottomControls.swift */,
 			);
 			path = BottomControls;
+			sourceTree = "<group>";
+		};
+		8A00693E229850F80070FF4C /* Catalog */ = {
+			isa = PBXGroup;
+			children = (
+				8A00694B229854C10070FF4C /* CatalogViewController.swift */,
+				8A00694F229855360070FF4C /* CatalogViewController.xib */,
+				8A006948229854840070FF4C /* Table */,
+			);
+			path = Catalog;
+			sourceTree = "<group>";
+		};
+		8A006948229854840070FF4C /* Table */ = {
+			isa = PBXGroup;
+			children = (
+				8A006940229852B10070FF4C /* CatalogTableView.swift */,
+				8A0069492298549C0070FF4C /* CatalogTableViewCell.swift */,
+			);
+			path = Table;
 			sourceTree = "<group>";
 		};
 		8A72B8E622944BDD00FD5F22 /* ReadySolution */ = {
@@ -381,6 +409,7 @@
 				8AA783E322958C0100ADFD91 /* TTNorms-Bold.otf in Resources */,
 				8AF7AB88228ECC27000F1D7E /* LaunchScreen.storyboard in Resources */,
 				8AC08B70229184B70093F570 /* AuthorizationViewController.storyboard in Resources */,
+				8A006950229855360070FF4C /* CatalogViewController.xib in Resources */,
 				8AC08B48229164160093F570 /* credentials.plist in Resources */,
 				8AF7ABC9228EE5B8000F1D7E /* MainViewController.storyboard in Resources */,
 				8AA783CA2295757800ADFD91 /* Assets.xcassets in Resources */,
@@ -469,6 +498,8 @@
 			files = (
 				8AC08B72229187D60093F570 /* NetworkDataFetcher.swift in Sources */,
 				8AC08B6C2291848C0093F570 /* AuthorizationViewController.swift in Sources */,
+				8A006941229852B10070FF4C /* CatalogTableView.swift in Sources */,
+				8A00694A2298549C0070FF4C /* CatalogTableViewCell.swift in Sources */,
 				8AC08B682291848C0093F570 /* AuthorizationPresenter.swift in Sources */,
 				8AC08B6B2291848C0093F570 /* AuthorizationModels.swift in Sources */,
 				8AC08B5E22917B0D0093F570 /* UserResponse.swift in Sources */,
@@ -480,6 +511,7 @@
 				8AF7ABD1228EF1FD000F1D7E /* MainBottomControls.swift in Sources */,
 				8AC08B692291848C0093F570 /* AuthorizationWorker.swift in Sources */,
 				8AC08B6D2291848C0093F570 /* AuthorizationInteractor.swift in Sources */,
+				8A00694C229854C10070FF4C /* CatalogViewController.swift in Sources */,
 				8A00693C229842830070FF4C /* ARBottomControls.swift in Sources */,
 				8A72B8E822944BF600FD5F22 /* ReadySolutionCollectionView.swift in Sources */,
 				8A00693922983FEB0070FF4C /* ARViewController.swift in Sources */,

@@ -11,7 +11,7 @@ import UIKit
 class ARViewController: UIViewController {
     
     private var bottomControls = ARBottomControls()
-
+    private var catalogViewController: CatalogViewController!
     private  let clearButton: UIButton = {
         let button = UIButton.getCustomtButton(imageName: "clear-scene")
         button.translatesAutoresizingMaskIntoConstraints = false
@@ -23,10 +23,28 @@ class ARViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-         setupBottomControls()
+        
+        setupBottomControls()
+        setupCatalogView()
     }
     
+    
+    // MARK: setup CatalogViewController
+    
+    private func setupCatalogView() {
+        
+        catalogViewController = CatalogViewController(nibName:"CatalogViewController", bundle:nil)
+         self.addChild(catalogViewController)
+//        catalogViewController.translatesAutoresizingMaskIntoConstraints = false
+//        catalogViewController.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
+//        catalogViewController.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
+//        catalogViewController.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
+//        catalogViewController.heightAnchor.constraint(equalToConstant: 600).isActive = true
+        
+    }
+    
+    
+    // MARK: setup ARBottomControls
     private func setupBottomControls() {
         view.addSubview(bottomControls)
         bottomControls.translatesAutoresizingMaskIntoConstraints = false
@@ -52,7 +70,7 @@ class ARViewController: UIViewController {
 
 // MARK: ARBottomControlsDelegate
 extension ARViewController: ARBottomControlsDelegate {
-  
+    
     
     func doneTapped() {
         print(#function)

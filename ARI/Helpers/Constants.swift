@@ -11,4 +11,5 @@ import UIKit
 
 class Constants {
     static let bottomControlsHeight: CGFloat = 65
+    static let bottomSize: CGFloat = 50
 }

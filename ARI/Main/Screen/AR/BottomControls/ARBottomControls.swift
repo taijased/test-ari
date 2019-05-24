@@ -87,26 +87,26 @@ class ARBottomControls: UIView {
         addSubview(doneButton)
         doneButton.topAnchor.constraint(equalTo: topAnchor).isActive = true
         doneButton.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -10).isActive = true
-        doneButton.widthAnchor.constraint(equalToConstant: 50).isActive = true
-        doneButton.heightAnchor.constraint(equalToConstant: 50).isActive = true
+        doneButton.widthAnchor.constraint(equalToConstant: Constants.bottomSize).isActive = true
+        doneButton.heightAnchor.constraint(equalToConstant: Constants.bottomSize).isActive = true
         
         addSubview(plusButton)
         plusButton.topAnchor.constraint(equalTo: topAnchor).isActive = true
         plusButton.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -70).isActive = true
-        plusButton.widthAnchor.constraint(equalToConstant: 50).isActive = true
-        plusButton.heightAnchor.constraint(equalToConstant: 50).isActive = true
+        plusButton.widthAnchor.constraint(equalToConstant: Constants.bottomSize).isActive = true
+        plusButton.heightAnchor.constraint(equalToConstant: Constants.bottomSize).isActive = true
         
         addSubview(undoButton)
         undoButton.topAnchor.constraint(equalTo: topAnchor).isActive = true
         undoButton.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -130).isActive = true
-        undoButton.widthAnchor.constraint(equalToConstant: 50).isActive = true
-        undoButton.heightAnchor.constraint(equalToConstant: 50).isActive = true
+        undoButton.widthAnchor.constraint(equalToConstant: Constants.bottomSize).isActive = true
+        undoButton.heightAnchor.constraint(equalToConstant: Constants.bottomSize).isActive = true
         
         addSubview(backButton)
         backButton.topAnchor.constraint(equalTo: topAnchor).isActive = true
         backButton.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 10).isActive = true
-        backButton.widthAnchor.constraint(equalToConstant: 50).isActive = true
-        backButton.heightAnchor.constraint(equalToConstant: 50).isActive = true
+        backButton.widthAnchor.constraint(equalToConstant: Constants.bottomSize).isActive = true
+        backButton.heightAnchor.constraint(equalToConstant: Constants.bottomSize).isActive = true
   
         
     }
